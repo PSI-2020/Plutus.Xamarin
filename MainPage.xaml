@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.MainPage"
+             BackgroundColor="#DCD5C9">
+    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Button BackgroundColor="#A3A09A" TextColor="White" FontSize="10" AbsoluteLayout.LayoutBounds="0.1, 0.05, 0.2, 0.1" AbsoluteLayout.LayoutFlags="All" CornerRadius="15" Text="Menu" Clicked="MenuButton_Clicked">
+        </Button>
+    </AbsoluteLayout>
+
+
+</ContentPage>

@@ -1,0 +1,17 @@
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\bin\Debug\netstandard2.0\Plutus.Xamarin.deps.json
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\bin\Debug\netstandard2.0\Plutus.Xamarin.dll
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\bin\Debug\netstandard2.0\ref\Plutus.Xamarin.dll
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\bin\Debug\netstandard2.0\Plutus.Xamarin.pdb
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\Plutus.Xamarin.csprojAssemblyReference.cache
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\Plutus.Xamarin.AssemblyInfoInputs.cache
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\Plutus.Xamarin.AssemblyInfo.cs
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\Plutus.Xamarin.csproj.CoreCompileInputs.cache
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\Plutus.Xamarin.dll
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\ref\Plutus.Xamarin.dll
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\Plutus.Xamarin.pdb
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\GreetPage.xaml.g.cs
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\HistoryPage.xaml.g.cs
+C:\Users\eglek\OneDrive\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPage.xaml.g.cs
