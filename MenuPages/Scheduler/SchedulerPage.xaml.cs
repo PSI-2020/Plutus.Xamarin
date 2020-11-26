@@ -10,20 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace Plutus.Xamarin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GreetPage : ContentPage
+    public partial class SchedulerPage : ContentPage
     {
+        MenuPage _menuPage;
         Services _services;
-        public GreetPage(Services services)
+        public SchedulerPage(MenuPage menuPage, Services services)
         {
+            _menuPage = menuPage;
             _services = services;
             InitializeComponent();
-        }
-
-        private void GetStarted_Clicked(object sender, EventArgs e)
-        {
-            var mainPage = new MainPage(_services);
-            NavigationPage.SetHasNavigationBar(mainPage, false);
-            Navigation.PushAsync(mainPage);
         }
     }
 }

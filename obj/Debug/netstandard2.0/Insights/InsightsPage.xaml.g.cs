@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.InsightsPage.xaml", "InsightsPage.xaml", typeof(global::Plutus.Xamarin.InsightsPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.Insights.InsightsPage.xaml", "Insights/InsightsPage.xaml", typeof(global::Plutus.Xamarin.InsightsPage))]
 
 namespace Plutus.Xamarin {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("InsightsPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Insights\\InsightsPage.xaml")]
     public partial class InsightsPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

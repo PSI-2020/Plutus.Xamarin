@@ -12,8 +12,12 @@ namespace Plutus.Xamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InsightsPage : ContentPage
     {
-        public InsightsPage()
+        MenuPage _menuPage;
+        Services _services;
+        public InsightsPage(MenuPage menuPage, Services services)
         {
+            _menuPage = menuPage;
+            _services = services;
             InitializeComponent();
         }
     }

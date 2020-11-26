@@ -63,6 +63,16 @@
           "buildTransitive/Xamarin.Forms.props": {},
           "buildTransitive/Xamarin.Forms.targets": {}
         }
+      },
+      "Plutus.BackEnd/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Plutus.BackEnd.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Plutus.BackEnd.dll": {}
+        }
       }
     }
   },
@@ -621,11 +631,17 @@
         "xamarin.forms.4.8.0.1451.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
+    },
+    "Plutus.BackEnd/1.0.0": {
+      "type": "project",
+      "path": "../../../Plutus.BackEnd/Plutus.BackEnd.csproj",
+      "msbuildProject": "../../../Plutus.BackEnd/Plutus.BackEnd.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "Plutus.BackEnd >= 1.0.0",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.8.0.1451"
     ]
@@ -637,11 +653,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+      "projectUniqueName": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus All\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
       "projectName": "Plutus.Xamarin",
-      "projectPath": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+      "projectPath": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus All\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
       "packagesPath": "C:\\Users\\eglek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\obj\\",
+      "outputPath": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus All\\Plutus.Xamarin\\Plutus.Xamarin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -661,7 +677,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus.BackEnd\\Plutus.BackEnd.csproj": {
+              "projectPath": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus.BackEnd\\Plutus.BackEnd.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

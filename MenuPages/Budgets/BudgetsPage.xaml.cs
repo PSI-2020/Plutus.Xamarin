@@ -10,10 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace Plutus.Xamarin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HistoryPage : ContentPage
+    public partial class BudgetsPage : ContentPage
     {
-        public HistoryPage()
+        MenuPage _menuPage;
+        Services _services;
+        public BudgetsPage(MenuPage menuPage, Services services)
         {
+            _menuPage = menuPage;
+            _services = services;
             InitializeComponent();
         }
     }

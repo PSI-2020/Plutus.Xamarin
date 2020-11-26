@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "txnZE+S1hQlAPkWAgA9JJ6eMvMmKTZvGoMQkWfZE+odIkYmhZSd1z60M0z6sGSuFb7UDnH5rhP62a1apCXUglg==",
+  "dgSpecHash": "nRP07mDb+2C3vgwMwm0P82mBy1I7O0A2jTdy3gngZDsQw4jDz9KomqDZzoTIwiwFzroZ9AWJrxofZLWa5W1uaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+  "projectFilePath": "C:\\Users\\eglek\\OneDrive\\Desktop\\Plutus All\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eglek\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\eglek\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

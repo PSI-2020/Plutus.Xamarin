@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.HistoryPage.xaml", "HistoryPage.xaml", typeof(global::Plutus.Xamarin.HistoryPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.MenuPages.MenuPage.xaml", "MenuPages/MenuPage.xaml", typeof(global::Plutus.Xamarin.MenuPage))]
 
 namespace Plutus.Xamarin {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("HistoryPage.xaml")]
-    public partial class HistoryPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MenuPages\\MenuPage.xaml")]
+    public partial class MenuPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(HistoryPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MenuPage));
         }
     }
 }

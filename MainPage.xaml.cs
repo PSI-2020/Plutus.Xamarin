@@ -11,10 +11,13 @@ namespace Plutus.Xamarin
     public partial class MainPage : ContentPage
     {
         MenuPage _menuPage;
-        public MainPage()
+        Services _services;
+
+        public MainPage(Services services)
         {
             InitializeComponent();
-            _menuPage = new MenuPage(); 
+            _menuPage = new MenuPage(_menuPage, services);
+            _services = services;
             NavigationPage.SetHasNavigationBar(_menuPage, false);
             
         }

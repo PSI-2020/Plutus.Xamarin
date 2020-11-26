@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plutus;
+using System.IO;
+using System.Xml.Linq;
 
 namespace Plutus.Xamarin
 {
@@ -9,9 +11,9 @@ namespace Plutus.Xamarin
     {
         public App()
         {
-           // PaymentService paymentService = new PaymentService();
+            var services = new Services(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
             InitializeComponent();
-            var greetPage = new GreetPage();
+            var greetPage = new GreetPage(services);
             NavigationPage.SetHasNavigationBar(greetPage, false);
             var navPage = new NavigationPage(greetPage);
             MainPage = navPage;
@@ -19,6 +21,7 @@ namespace Plutus.Xamarin
 
         protected override void OnStart()
         {
+
         }
 
         protected override void OnSleep()

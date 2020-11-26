@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.MenuPage.xaml", "MenuPage.xaml", typeof(global::Plutus.Xamarin.MenuPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.SchedulerPage.xaml", "SchedulerPage.xaml", typeof(global::Plutus.Xamarin.SchedulerPage))]
 
 namespace Plutus.Xamarin {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MenuPage.xaml")]
-    public partial class MenuPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("SchedulerPage.xaml")]
+    public partial class SchedulerPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MenuPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SchedulerPage));
         }
     }
 }
