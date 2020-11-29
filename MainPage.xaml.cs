@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Plutus.Xamarin
 {
     public partial class MainPage : ContentPage
     {
-        MenuPage _menuPage;
-        Services _services;
+        private readonly MenuPage _menuPage;
+        private readonly Services _services;
 
         public MainPage(Services services)
         {

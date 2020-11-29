@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,6 +15,7 @@ namespace Plutus.Xamarin
         readonly GoalsPage _goalsPage;
         readonly BudgetsPage _budgetsPage;
         readonly CartsPage _cartsPage;
+        readonly SchedulerAddPage _schedulerAddPage;
         public MenuPage(MenuPage menuPage, Services services)
         {
             _menuPage = menuPage;
@@ -34,6 +30,9 @@ namespace Plutus.Xamarin
 
             _schedulerPage = new SchedulerPage(_menuPage, _services);
             NavigationPage.SetHasNavigationBar(_schedulerPage, false);
+
+            _schedulerAddPage = new SchedulerAddPage(_menuPage, _services);
+            NavigationPage.SetHasNavigationBar(_schedulerAddPage, false);
 
             _goalsPage = new GoalsPage(_menuPage, _services);
             NavigationPage.SetHasNavigationBar(_goalsPage, false);
@@ -55,7 +54,7 @@ namespace Plutus.Xamarin
         }
         private void SchedulerPage_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(_schedulerPage);
+             Navigation.PushAsync(_schedulerPage);
         }
         private void GoalsPage_Clicked(object sender, EventArgs e)
         {

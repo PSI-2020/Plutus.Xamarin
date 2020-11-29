@@ -5,27 +5,27 @@
     <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Button BackgroundColor="#A3A09A" CornerRadius="15" 
                 AbsoluteLayout.LayoutBounds="0.5, 0.3, 0.8, 0.1" AbsoluteLayout.LayoutFlags="All" 
-                TextColor="White" FontSize="25" Text="History" 
+                TextColor="White" FontSize="25" Text="History" FontFamily="LilitaOne"
                 Clicked="HistoryPage_Clicked" />
         <Button BackgroundColor="#A3A09A" CornerRadius="15" 
                 AbsoluteLayout.LayoutBounds="0.5, 0.42, 0.8, 0.1" AbsoluteLayout.LayoutFlags="All" 
-                TextColor="White" FontSize="25" Text="Insights" 
+                TextColor="White" FontSize="25" Text="Insights" FontFamily="LilitaOne"
                 Clicked="InsightsPage_Clicked" />
         <Button BackgroundColor="#A3A09A" CornerRadius="15" 
                 AbsoluteLayout.LayoutBounds="0.5, 0.54, 0.8, 0.1" AbsoluteLayout.LayoutFlags="All" 
-                TextColor="White" FontSize="25" Text="Scheduler" 
+                TextColor="White" FontSize="25" Text="Scheduler" FontFamily="LilitaOne"
                 Clicked="SchedulerPage_Clicked" />
         <Button BackgroundColor="#A3A09A" CornerRadius="15" 
                 AbsoluteLayout.LayoutBounds="0.5, 0.66, 0.8, 0.1" AbsoluteLayout.LayoutFlags="All" 
-                TextColor="White" FontSize="25" Text="Goals" 
+                TextColor="White" FontSize="25" Text="Goals" FontFamily="LilitaOne"
                 Clicked="GoalsPage_Clicked" />
         <Button BackgroundColor="#A3A09A" CornerRadius="15" 
                 AbsoluteLayout.LayoutBounds="0.5, 0.78, 0.8, 0.1" AbsoluteLayout.LayoutFlags="All" 
-                TextColor="White" FontSize="25" Text="Budgets" 
+                TextColor="White" FontSize="25" Text="Budgets" FontFamily="LilitaOne"
                 Clicked="BudgetsPage_Clicked" />
         <Button BackgroundColor="#A3A09A" CornerRadius="15" 
                 AbsoluteLayout.LayoutBounds="0.5, 0.9, 0.8, 0.1" AbsoluteLayout.LayoutFlags="All" 
-                TextColor="White" FontSize="25" Text="Carts" 
+                TextColor="White" FontSize="25" Text="Carts" FontFamily="LilitaOne"
                 Clicked="CartsPage_Clicked" />
     </AbsoluteLayout>
 </ContentPage>

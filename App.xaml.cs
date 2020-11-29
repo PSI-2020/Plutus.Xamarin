@@ -1,10 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Plutus;
-using System.IO;
-using System.Xml.Linq;
 
+[assembly: ExportFont("LilitaOne.ttf", Alias = "LilitaOne")]
+[assembly: ExportFont("Macondo.ttf", Alias = "Macondo")]
 namespace Plutus.Xamarin
 {
     public partial class App : Application

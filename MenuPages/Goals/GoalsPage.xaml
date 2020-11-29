@@ -1,12 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Plutus.Xamarin.GoalsPage">
+             x:Class="Plutus.Xamarin.GoalsPage"
+             BackgroundColor="#DCD5C9">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Goals Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+             <Button Margin="10,20,0,0" WidthRequest="61" VerticalOptions="Start"
+                HorizontalOptions="Start" BackgroundColor="#B8AF9D" CornerRadius="15" 
+                TextColor="White" FontSize="13" Text="menu" FontFamily="LilitaOne" 
+                Clicked="MenuButton_Clicked" />
+            <Button Margin="0,20,10,0" WidthRequest="61" VerticalOptions="Start"
+                HorizontalOptions="End" BackgroundColor="#B8AF9D" CornerRadius="15" 
+                TextColor="White" FontSize="13" FontFamily="LilitaOne" Text="exit" 
+                Clicked="ExitButton_Clicked" />
+
+            <Label Padding="0,60,0,0" Text="GOALS" FontFamily="LilitaOne" FontSize="48" TextColor="#726B60" FontAttributes="Bold"
+                HorizontalOptions="Center" />
+            <Frame HasShadow="False" BorderColor="#A3A09A" BackgroundColor="#DCD5C9" Margin="40,140,40,110">
+                <ScrollView>
+                     <StackLayout x:Name="goalsStack"/>
+                    </ScrollView>
+                </Frame>
+              <Button Margin="30" WidthRequest="60" VerticalOptions="End"
+                HorizontalOptions="Center" BackgroundColor="#A3A09A" CornerRadius="15" 
+                TextColor="White" FontSize="25" FontFamily="LilitaOne" Text="+" 
+                Clicked="AddGoal_Clicked" />
+     
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

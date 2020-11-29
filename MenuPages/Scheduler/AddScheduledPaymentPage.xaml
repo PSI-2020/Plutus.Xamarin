@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.AddScheduledPaymentPage"
+             BackgroundColor="#DCD5C9">
+    <ContentPage.Content>
+
+        <Grid>
+            <Button Text="back"
+                    HeightRequest="45"
+                    HorizontalOptions="End"
+                    WidthRequest="59"
+                    FontSize="13"
+                    FontFamily="LilitaOne"
+                    VerticalOptions="Start"
+                    Margin="20,15"
+                    BackgroundColor="#DCD5C9"
+                    BorderColor="#C7C1B5"
+                    TextColor="#726B60"
+                    Clicked="ExitButton_Clicked"/>
+
+            <StackLayout Margin="40,70">
+                
+                <Label
+                   Padding="0,10,0,0"
+                   Text="Name:"
+                   FontFamily="LilitaOne"
+                   FontSize="25"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   />
+                <Entry
+                x:Name="paymentName"
+                TextColor="#A19C92"
+                FontSize="25"
+                FontAttributes="Bold"
+                FontFamily="LilitaOne"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5"/>
+                
+                <Label
+                   Padding="0,10,0,0"
+                   Text="Amount:"
+                   FontSize="25"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   />
+                <Entry
+                x:Name="paymentAmount"
+                TextColor="#A19C92"
+                Keyboard="Numeric"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5"/>
+                <Label
+                   Padding="0,10,0,0"
+                   Text="First Payment:"
+                   FontSize="25"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                    />
+                <DatePicker
+                x:Name="paymentFirstPay"
+                TextColor="#A19C92"
+                FontAttributes="Bold"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                Format="yyyy/MM/dd"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5"
+                />
+                <Label
+                   Padding="0,10,0,0"
+                   Text="Frequency:"
+                   FontSize="25"
+                   TextColor="White"
+                   FontFamily="LilitaOne"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                    />
+                <Picker
+                x:Name="paymentFrequency"
+                TextColor="#A19C92"
+                FontSize="25"
+                FontAttributes="Bold"
+                FontFamily="LilitaOne"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5">
+                    <Picker.Items>
+                        <x:String>Monthly</x:String>
+                        <x:String>Weekly</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <Button Margin="50,40" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
+                HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
+                TextColor="White" FontSize="25" FontFamily="LilitaOne" FontAttributes="Bold" Text="ADD"
+                    Clicked="AddScheduledPayment_Clicked"
+                />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

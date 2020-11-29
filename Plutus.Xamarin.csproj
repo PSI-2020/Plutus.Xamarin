@@ -17,17 +17,36 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Plutus.BackEnd\Plutus.BackEnd.csproj" />
+    <ProjectReference Include="..\Plutus.BackEnd\Plutus.BackEnd.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="MenuPages\Budgets\AddBudgetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="MenuPages\Carts\CartsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MenuPages\Budgets\BudgetsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="MenuPages\Goals\AddGoalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MenuPages\Goals\CheckGoalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MenuPages\Goals\EditGoalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="MenuPages\Goals\GoalsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MenuPages\Scheduler\AddScheduledPaymentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MenuPages\Scheduler\SchedulerAddPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MenuPages\Scheduler\SchedulerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

@@ -12,7 +12,7 @@ namespace Plutus.Xamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GreetPage : ContentPage
     {
-        Services _services;
+        private readonly Services _services;
         public GreetPage(Services services)
         {
             _services = services;

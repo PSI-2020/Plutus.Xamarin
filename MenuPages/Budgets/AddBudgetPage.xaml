@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.AddBudgetPage"
+             BackgroundColor="#DCD5C9">
+    <ContentPage.Content>
+        <Grid>
+
+            <StackLayout Padding="0,50,0,0">
+
+                <Frame BackgroundColor="#726B60" HasShadow="False">
+                    <Label
+                   Text="ADD BUDGET"
+                   FontFamily="LilitaOne"
+                   FontSize="25"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   />
+                </Frame>
+
+                <StackLayout Margin="40,0">
+                    <Label
+                   Padding="0,10,0,0"
+                   Text="Category:"
+                   FontSize="22"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   />
+                    <Picker
+                x:Name="budgetCategory"
+                TextColor="#A19C92"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5">
+                        <Picker.Items>
+                            <x:String>Groceries</x:String>
+                            <x:String>Restaurant</x:String>
+                            <x:String>Clothes</x:String>
+                            <x:String>Transport</x:String>
+                            <x:String>Health</x:String>
+                            <x:String>School</x:String>
+                            <x:String>Bills</x:String>
+                            <x:String>Entertainment</x:String>
+                            <x:String>Other</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label
+                   Padding="0,10,0,0"
+                   Text="Amount:"
+                   FontSize="22"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   />
+                    <Entry
+                x:Name="budgetAmount"
+                TextColor="#A19C92"
+                Keyboard="Numeric"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5"/>
+                    <Label
+                   Padding="0,10,0,0"
+                   Text="From:"
+                   FontSize="22"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                    />
+                    <DatePicker
+                x:Name="budgetFrom"
+                TextColor="#A19C92"
+                FontAttributes="Bold"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                Format="yyyy/MM/dd"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5"
+                />
+                    <Label
+                   Padding="0,10,0,0"
+                   Text="To:"
+                   FontSize="22"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                    />
+                    <DatePicker
+                x:Name="budgetTo"
+                TextColor="#A19C92"
+                FontAttributes="Bold"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                Format="yyyy/MM/dd"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5"
+                />
+
+                </StackLayout>
+            </StackLayout>
+            <Button Text="back"
+                    HeightRequest="25"
+                    HorizontalOptions="End"
+                    WidthRequest="40"
+                    FontSize="13"
+                    FontFamily="LilitaOne"
+                    VerticalOptions="Start"
+                    Margin="20,10"
+                    BackgroundColor="#DCD5C9"
+                    BorderColor="#C7C1B5"
+                    TextColor="#726B60"
+                    Clicked="ExitButton_Clicked"/>
+            <Button Margin="50,40" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
+                HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
+                TextColor="White" FontFamily="LilitaOne" FontSize="25" FontAttributes="Bold" Text="ADD" 
+                Clicked="AddBudget_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
