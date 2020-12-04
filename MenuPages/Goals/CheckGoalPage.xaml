@@ -129,7 +129,7 @@
                 Clicked="EditGoal_Clicked"/>
         <Button Margin="50" WidthRequest="180" HeightRequest="60" VerticalOptions="End"
                 HorizontalOptions="End" BackgroundColor="#726B60" CornerRadius="15" 
-                TextColor="White" FontFamily="LilitaOne" FontSize="20" FontAttributes="Bold" Text="set as main goal" 
+                TextColor="White" FontFamily="LilitaOne" FontSize="15" FontAttributes="Bold" Text="set as main goal" 
                 Clicked="SetMainGoal_Clicked"/>
       </Grid>
         </ContentPage.Content>

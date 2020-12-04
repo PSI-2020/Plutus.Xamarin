@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Plutus.Xamarin
 {
@@ -17,34 +19,19 @@ namespace Plutus.Xamarin
             _services = services;
 
             InitializeComponent();
-            CreateGoalButtons();
+            CreateGoalButtonsAsync();
 
         }
-        public void CreateGoalButtons()
-        { 
-            //test
-            var list = new List<String>
+        public async void CreateGoalButtonsAsync()
+        {
+            var httpClient = new HttpClient();
+            var reponse = await httpClient.GetStringAsync("https://aspnet-ybkkj2yjkwqhk.azurewebsites.net/api/Goals");
+            var goals = JsonConvert.DeserializeObject<List<Goal>>(reponse);
+
+            foreach (var item in goals)
             {
-                "Vienas",
-                "Du",
-                "Trys",
-                "Keturi",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15"
-            };
-            foreach (var item in list)
-            {
-                var button = new GoalButton(new Goal(item, 50, DateTime.Now));
-                button.Clicked += GoalButton_Clicked;
+                var button = new GoalButton(item);
+                button.Clicked += new EventHandler(GoalButton_Clicked);
 
                 goalsStack.Children.Add(button);
             }
@@ -72,10 +59,8 @@ namespace Plutus.Xamarin
         }
         private void GoalButton_Clicked(object sender, EventArgs e)
         {
-           
             var button = (GoalButton)sender;
-            Console.WriteLine(button.Goal.Name);
-            var page = new CheckGoalPage(button.Goal,_menuPage, _services);
+            var page = new CheckGoalPage(button.Goal, _menuPage, _services);
             NavigationPage.SetHasNavigationBar(page, false);
             Navigation.PushAsync(page);
 
