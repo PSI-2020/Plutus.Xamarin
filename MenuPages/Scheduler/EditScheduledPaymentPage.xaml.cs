@@ -5,7 +5,7 @@ namespace Plutus.Xamarin
 {
     public partial class EditScheduledPaymentPage : ContentPage
     {
-        Services _services;
+        private readonly Services _services;
         public EditScheduledPaymentPage(Services services)
         {
             _services = services;

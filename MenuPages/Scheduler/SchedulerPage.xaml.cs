@@ -11,34 +11,21 @@ namespace Plutus.Xamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SchedulerPage : ContentPage
     {
-        MenuPage _menuPage;
-        Services _services;
+        private readonly MenuPage _menuPage;
+        private readonly Services _services;
+        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
         public SchedulerPage(MenuPage menuPage, Services services)
         {
             _menuPage = menuPage;
             _services = services;
             InitializeComponent();
-            LoadScheduledPayments();
+            LoadScheduledPaymentsAsync();
 
         }
-        private void LoadScheduledPayments()
+        private async void LoadScheduledPaymentsAsync()
         {
-            //test
-            var income = new List<ScheduledPayment>
-            {
-                new ScheduledPayment(DateTime.Now,"test1",50,"something","111","weekly",true),
-                new ScheduledPayment(DateTime.Now,"test2",500,"something","111","monthly",true),
-                new ScheduledPayment(DateTime.Now,"test7",600,"something","111","monthly",true),
-                new ScheduledPayment(DateTime.Now,"test8",600,"something","111","monthly",true)
-            };
-            var expense = new List<ScheduledPayment>
-            {
-                new ScheduledPayment(DateTime.Now,"test3",60,"something","111","weekly",false),
-                new ScheduledPayment(DateTime.Now,"test4",600,"something","111","monthly",true),
-                new ScheduledPayment(DateTime.Now,"test5",600,"something","111","monthly",true),
-                new ScheduledPayment(DateTime.Now,"test6",600,"something","111","monthly",true)
-            };
-
+            var income = await _plutusApiClient.GetAllScheduledPaymentsAsync("MonthlyIncome");
+            var expense = await _plutusApiClient.GetAllScheduledPaymentsAsync("MonthlyExpenses");
 
             if (income.Any())
             {
@@ -47,15 +34,12 @@ namespace Plutus.Xamarin
                     scheduledIncome.Children.Add(item);
             }
 
-
             if (expense.Any())
             {
                 var allExpenses = LoadPayments(expense);
                 foreach (var item in allExpenses)
                     scheduledExpenses.Children.Add(item);
             }
-
-
 
         }
         private List<Grid> LoadPayments(List<ScheduledPayment> payments)
@@ -68,10 +52,10 @@ namespace Plutus.Xamarin
                     Padding = new Thickness(2, 2, 15, 2),
                     BackgroundColor = Color.FromHex("#726B60"),
                     ColumnDefinitions =
-                {
+                    {
                     new ColumnDefinition(),
                     new ColumnDefinition()
-                }
+                    }
                 };
 
                 var stack = new StackLayout

@@ -78,6 +78,7 @@
             </StackLayout>
         </StackLayout>
         <Button Text="back"
+                Padding="0"
                     HeightRequest="25"
                     HorizontalOptions="End"
                     WidthRequest="40"

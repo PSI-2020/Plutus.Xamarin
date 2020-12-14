@@ -5,7 +5,8 @@ namespace Plutus.Xamarin
 {
     public partial class AddGoalPage : ContentPage
     {
-        Services _services;
+        private readonly Services _services;
+        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
         public AddGoalPage(Services services)
         {
             _services = services;
@@ -15,17 +16,19 @@ namespace Plutus.Xamarin
         {
             Application.Current.MainPage.Navigation.PopAsync();
         }
-        private void AddGoal_Clicked(object sender, System.EventArgs e)
+        private async void AddGoal_Clicked(object sender, System.EventArgs e)
         {
             var error = _services.VerificationService.VerifyData(name: newGoalName.Text,amount: newGoalAmount.Text);
             if (error == "")
             {
-                //DisplayAlert("Success!", "Goal added succesfully", "OK");
-                Application.Current.MainPage.Navigation.PopAsync();
+                var goal = new Goal(newGoalName.Text.UppercaseFirstLetter(), double.Parse(newGoalAmount.Text), newGoalDueDate.Date);
+                await _plutusApiClient.PostGoalAsync(goal);
+                await DisplayAlert("Success!", "Goal added succesfully", "OK");
+                await Application.Current.MainPage.Navigation.PopAsync();
             }
             else
             {
-                DisplayAlert("Ooops...", error, "OK");
+               await DisplayAlert("Ooops...", error, "OK");
             }
         }
     }

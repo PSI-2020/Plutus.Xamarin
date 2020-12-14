@@ -15,6 +15,8 @@ namespace Plutus.Xamarin
             NavigationPage.SetHasNavigationBar(greetPage, false);
             var navPage = new NavigationPage(greetPage);
             MainPage = navPage;
+
+            
         }
 
         protected override void OnStart()

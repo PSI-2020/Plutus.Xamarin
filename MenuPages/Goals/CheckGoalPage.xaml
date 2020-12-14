@@ -52,7 +52,6 @@
                 BackgroundColor="#7E7970"
                 HasShadow="False">
                  <Label x:Name="todaySpendLabel"
-                        Text="50$"
                         TextColor="White"
                         FontAttributes="Bold"
                         FontSize="30"
@@ -76,7 +75,6 @@
                 BackgroundColor="#7E7970"
                    HasShadow="False">
                  <Label x:Name="monthSpendLabel"
-                        Text="500$"
                         TextColor="White"
                         FontAttributes="Bold"
                         FontSize="30"
@@ -100,7 +98,6 @@
                 BackgroundColor="#7E7970"
                    HasShadow="False">
                  <Label x:Name="daysLeftLabel"
-                        Text="30"
                         TextColor="White"
                         FontAttributes="Bold"
                         FontSize="30"
@@ -112,6 +109,7 @@
             </StackLayout>
         </StackLayout>
         <Button Text="&lt;"
+                Padding="0"
                     HeightRequest="25"
                     HorizontalOptions="Start"
                     WidthRequest="20"

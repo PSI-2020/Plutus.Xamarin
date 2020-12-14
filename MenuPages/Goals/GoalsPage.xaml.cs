@@ -10,8 +10,9 @@ namespace Plutus.Xamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GoalsPage : ContentPage
     {
-        MenuPage _menuPage;
-        Services _services;
+        private readonly MenuPage _menuPage;
+        private readonly Services _services;
+        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
 
         public GoalsPage(MenuPage menuPage, Services services)
         {
@@ -19,20 +20,28 @@ namespace Plutus.Xamarin
             _services = services;
 
             InitializeComponent();
+        }
+        protected override void OnAppearing()
+        {
             CreateGoalButtonsAsync();
-
+            base.OnAppearing();
         }
         public async void CreateGoalButtonsAsync()
         {
-            var httpClient = new HttpClient();
-            var reponse = await httpClient.GetStringAsync("https://aspnet-ybkkj2yjkwqhk.azurewebsites.net/api/Goals");
-            var goals = JsonConvert.DeserializeObject<List<Goal>>(reponse);
+            goalsStack.Children.Clear();
 
+            var goals = await _plutusApiClient.GetGoalsAsync();
+
+            var i = 0;
             foreach (var item in goals)
             {
                 var button = new GoalButton(item);
                 button.Clicked += new EventHandler(GoalButton_Clicked);
-
+                if (i == 0)
+                {
+                    button.BackgroundColor = Color.FromHex("726B60");
+                }
+                i++;
                 goalsStack.Children.Add(button);
             }
 
@@ -44,7 +53,6 @@ namespace Plutus.Xamarin
             NavigationPage.SetHasNavigationBar(addGoalPage, false);
             Navigation.PushAsync(addGoalPage);
         }
-
 
         private void MenuButton_Clicked(object sender, EventArgs e)
         {

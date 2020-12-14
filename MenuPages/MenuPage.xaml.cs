@@ -37,7 +37,7 @@ namespace Plutus.Xamarin
             _goalsPage = new GoalsPage(_menuPage, _services);
             NavigationPage.SetHasNavigationBar(_goalsPage, false);
 
-            _budgetsPage = new BudgetsPage(_menuPage, _services);
+            _budgetsPage = new BudgetsPage(_services);
             NavigationPage.SetHasNavigationBar(_budgetsPage, false);
 
             _cartsPage = new CartsPage(_menuPage, _services);

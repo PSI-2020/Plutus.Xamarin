@@ -8,7 +8,7 @@ namespace Plutus.Xamarin
         public GoalButton(Goal goal)
         {
             CornerRadius = 15;
-            BackgroundColor = Color.FromHex("726B60");
+            BackgroundColor = Color.FromHex("B7B2AA");
             Text = goal.Name;
             TextColor = Color.White;
             FontAttributes = FontAttributes.Bold;
