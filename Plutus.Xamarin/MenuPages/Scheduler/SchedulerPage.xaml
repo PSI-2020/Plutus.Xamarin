@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.SchedulerPage"
+             BackgroundColor = "#DCD5C9">
+
+    <ContentPage.Content>
+        <Grid>
+
+            <Button Margin="10,20,0,0"
+                    WidthRequest="61"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    BackgroundColor="#B8AF9D"
+                    CornerRadius="15" 
+                    TextColor="White"
+                    FontFamily="LilitaOne"
+                    FontSize="13"
+                    Text="menu" 
+                    Clicked="MenuButton_Clicked" />
+
+            <Button Margin="0,20,10,0"
+                    WidthRequest="61"
+                    VerticalOptions="Start"
+                    HorizontalOptions="End"
+                    BackgroundColor="#B8AF9D"
+                    CornerRadius="15" 
+                    TextColor="White"
+                    FontFamily="LilitaOne"
+                    FontSize="13"
+                    Text="exit" 
+                    Clicked="ExitButton_Clicked" />
+
+
+            <Label Padding="0,60,0,0"
+                   Text="SCHEDULER"
+                   FontSize="45"
+                   FontFamily="LilitaOne"
+                   TextColor="#726B60"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Grid RowSpacing="5" Margin="20,120,20,90">
+
+                <StackLayout BackgroundColor="#CEC4B4"
+                         Grid.Row="0">
+                    <Grid ColumnDefinitions="*,30" HeightRequest="50">
+
+                        <Button 
+                        TextColor="White"
+                        Text="E"
+                        FontSize="10"
+                        Padding="0"
+                        Grid.Column="1"
+                        BackgroundColor="#726B60"
+                        FontFamily="LilitaOne"
+                        Clicked="EditScheduledPayment_Clicked"/>
+                        <Label 
+                        Grid.Column="0"
+                        Text="SCHEDULED INCOME:"
+                        FontSize="17"
+                        TextColor="#726B60"
+                        FontFamily="LilitaOne"
+                        Padding="50,5,0,0"
+                        HorizontalOptions="Center"/>
+                    </Grid>
+
+                    <Frame Margin="0,10,0,0" Padding="0" HasShadow="False">
+                        <ScrollView Margin="0">
+                            <StackLayout x:Name="scheduledIncome" BackgroundColor="#DCD5C9">
+
+
+                            </StackLayout>
+                        </ScrollView>
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout BackgroundColor="#CEC4B4"
+                         Grid.Row="1">
+                    <Grid ColumnDefinitions="*,30" HeightRequest="50">
+
+                        <Button 
+                            TextColor="White"
+                            Text="E"
+                            FontSize="10"
+                            Grid.Column="1"
+                            Padding="0"
+                            BackgroundColor="#726B60"
+                            FontFamily="LilitaOne"
+                            Clicked="EditScheduledPayment_Clicked"/>
+                        <Label 
+                            Grid.Column="0"
+                            Text="SCHEDULED EXPENSES:"
+                            FontSize="17"
+                            TextColor="#726B60"
+                            FontFamily="LilitaOne"
+                            Padding="50,5,0,0"
+                            HorizontalOptions="Center"/>
+                    </Grid>
+
+                    <Frame  Margin="0,10,0,0" Padding="0" HasShadow="False">
+                        <ScrollView Margin= "0">
+                            <StackLayout x:Name="scheduledExpenses" BackgroundColor="#DCD5C9">
+
+
+
+                            </StackLayout>
+                        </ScrollView>
+                    </Frame>
+
+                </StackLayout>
+            </Grid>
+
+            <Button Margin="30"
+                    WidthRequest="50"
+                    VerticalOptions="End"
+                    FontFamily="LilitaOne"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#A3A09A"
+                    CornerRadius="15" 
+                    TextColor="White"
+                    FontSize="25"
+                    Text="+" 
+                    Clicked="AddScheduledPayment_Clicked" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

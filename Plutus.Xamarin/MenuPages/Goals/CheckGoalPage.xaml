@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.CheckGoalPage"         BackgroundColor="#DCD5C9">
+    <ContentPage.Content>
+    <Grid>
+        <StackLayout Padding="0,50,0,0">
+      
+            <StackLayout Padding="4" BackgroundColor="#726B60"> 
+            <Label FontFamily="LilitaOne"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill"
+                   FontSize="30"
+                   FontAttributes="Bold">
+                <Label.FormattedText>
+                    <FormattedString>
+                    <Span Text="GOAL: "
+                          />
+                    <Span x:Name="goalNameLabel"/>
+                        </FormattedString>
+                </Label.FormattedText>
+             </Label>
+                <Label FontFamily="LilitaOne"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill"
+                   FontSize="15"
+                   FontAttributes="Bold">
+                    <Label.FormattedText>
+                    <FormattedString>
+                    <Span Text="save "/>
+                    <Span x:Name="goalAmountLabel"/>
+                    <Span Text=" until "/>
+                    <Span x:Name="goalDueDateLabel"/>
+                    </FormattedString>
+                </Label.FormattedText>
+             </Label>
+                   </StackLayout>
+
+            <StackLayout Margin="40,20">
+             <Label
+                   Text="You can spend today:"
+                   FontSize="25"
+                   FontFamily="LilitaOne"
+                   TextColor="#8E897E"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"/>
+             <Frame CornerRadius="10"
+                HeightRequest="33"
+                BackgroundColor="#7E7970"
+                HasShadow="False">
+                 <Label x:Name="todaySpendLabel"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="30"
+                        FontFamily="LilitaOne"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Center"/>
+             </Frame>
+                   
+             <Label
+                   Padding="0,10,0,0"
+                   Text="You can spend this month:"
+                   FontFamily="LilitaOne"
+                   FontSize="23"
+                   TextColor="#8E897E"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"/>
+            <Frame CornerRadius="10"
+                HeightRequest="33"
+                BackgroundColor="#7E7970"
+                   HasShadow="False">
+                 <Label x:Name="monthSpendLabel"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="30"
+                        FontFamily="LilitaOne"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Center"/>
+             </Frame>
+             <Label
+                   Padding="0,10,0,0"
+                   Text="Days left until due day:"
+                   FontSize="25"
+                   FontFamily="LilitaOne"
+                   TextColor="#8E897E"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                    />
+            <Frame CornerRadius="10"
+                HeightRequest="33"
+                BackgroundColor="#7E7970"
+                   HasShadow="False">
+                 <Label x:Name="daysLeftLabel"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="30"
+                        FontFamily="LilitaOne"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Center"/>
+             </Frame>
+            </StackLayout>
+        </StackLayout>
+        <Button Text="&lt;"
+                Padding="0"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    WidthRequest="20"
+                    FontSize="25"
+                    FontFamily="LilitaOne"
+                    VerticalOptions="Start"
+                    Margin="20,15"
+                    BackgroundColor="#DCD5C9"
+                    BorderColor="#C7C1B5"
+                    TextColor="#726B60"
+                    Clicked="ExitButton_Clicked"/>
+        <Button Margin="50" WidthRequest="80" HeightRequest="60" VerticalOptions="End"
+                HorizontalOptions="Start" BackgroundColor="#8D8B86" CornerRadius="15" 
+                TextColor="White" FontFamily="LilitaOne" FontSize="20" FontAttributes="Bold" Text="edit" 
+                Clicked="EditGoal_Clicked"/>
+        <Button Margin="50" WidthRequest="180" HeightRequest="60" VerticalOptions="End"
+                HorizontalOptions="End" BackgroundColor="#726B60" CornerRadius="15" 
+                TextColor="White" FontFamily="LilitaOne" FontSize="15" FontAttributes="Bold" Text="set as main goal" 
+                Clicked="SetMainGoal_Clicked"/>
+      </Grid>
+        </ContentPage.Content>
+</ContentPage>
+

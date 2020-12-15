@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.AddGoalPage"
+             BackgroundColor="#DCD5C9">
+    <ContentPage.Content>
+    <Grid>
+        <StackLayout Padding="0,50,0,0">
+            
+        <Frame HasShadow="False" BackgroundColor="#726B60">
+            <Label
+                   Text="ADD NEW GOAL"
+                   FontSize="30"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill"/>
+        </Frame>
+            <StackLayout Margin="40,20">
+             <Label
+                   Text="Name:"
+                   FontSize="30"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   HorizontalOptions="Start"/>
+             <Entry
+                x:Name="newGoalName"
+                TextColor="#A19C92"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                HeightRequest="55"
+                BackgroundColor="#C7C1B5"
+                   />
+             <Label
+                   Padding="0,10,0,0"
+                   Text="Amount:"
+                   FontFamily="LilitaOne"
+                   FontSize="30"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   HorizontalOptions="Start"/>
+             <Entry
+                x:Name="newGoalAmount"
+                TextColor="#A19C92"
+                Keyboard="Numeric"
+                FontFamily="LilitaOne"
+                FontSize="25"
+                FontAttributes="Bold"
+                HeightRequest="55"
+                BackgroundColor="#C7C1B5"/>
+             <Label
+                   Padding="0,10,0,0"
+                   Text="Set a due date:"
+                   FontSize="30"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   HorizontalOptions="Start"
+                    />
+             <DatePicker
+                x:Name="newGoalDueDate"
+                TextColor="#A19C92"
+                FontAttributes="Bold"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                Format="yyyy/MM/dd"
+                HeightRequest="55"
+                BackgroundColor="#C7C1B5"
+                />
+
+            </StackLayout>
+        </StackLayout>
+        <Button Text="back"
+                    HeightRequest="25"
+                    HorizontalOptions="End"
+                    WidthRequest="40"
+                    FontSize="13"
+                    FontFamily="LilitaOne"
+                    VerticalOptions="Start"
+                    Margin="20,15"
+                    BackgroundColor="#DCD5C9"
+                    BorderColor="#C7C1B5"
+                    TextColor="#726B60"
+                    Clicked="ExitButton_Clicked"/>
+        <Button Margin="50" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
+                HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
+                TextColor="White" FontFamily="LilitaOne" FontSize="25" FontAttributes="Bold" Text="ADD" 
+                Clicked="AddGoal_Clicked"/>
+      </Grid>
+        </ContentPage.Content>
+</ContentPage>
