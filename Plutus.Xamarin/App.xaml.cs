@@ -10,7 +10,8 @@ namespace Plutus.Xamarin
         public App()
         {
             InitializeComponent();
-            var greetPage = new GreetPage();
+            var plutusApiClient = new PlutusApiClient();
+            var greetPage = new GreetPage(plutusApiClient);
             NavigationPage.SetHasNavigationBar(greetPage, false);
             var navPage = new NavigationPage(greetPage);
             MainPage = navPage;

@@ -7,11 +7,12 @@ namespace Plutus.Xamarin
     public partial class CheckGoalPage : ContentPage
     {
         private readonly Goal _goal;
-        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
-        public CheckGoalPage(Goal goal)
+        private readonly PlutusApiClient _plutusApiClient;
+        public CheckGoalPage(Goal goal, PlutusApiClient plutusApi)
         {
             InitializeComponent();
             _goal = goal;
+            _plutusApiClient = plutusApi;
             LoadContentAsync();
         }
         public async void LoadContentAsync()
@@ -27,12 +28,12 @@ namespace Plutus.Xamarin
             goalNameLabel.Text = _goal.Name;
             goalAmountLabel.Text = _goal.Amount.ToString("C2");
             goalDueDateLabel.Text = _goal.DueDate.ToShortDateString();
-            todaySpendLabel.Text = await _plutusApiClient.GetGoalInsightsAsync(id,"daily");
+            todaySpendLabel.Text = await _plutusApiClient.GetGoalInsightsAsync(id, "daily");
             monthSpendLabel.Text = await _plutusApiClient.GetGoalInsightsAsync(id, "monthly");
             daysLeftLabel.Text = _goal.CalculateDaysLeft();
         }
 
-        private async void SetMainGoal_Clicked(object sender, System.EventArgs e)
+        private async void SetMainGoal_Clicked(object sender, EventArgs e)
         {
             await _plutusApiClient.SetAsMainGoalAsync(_goal);
             await Application.Current.MainPage.Navigation.PopAsync();
@@ -40,7 +41,7 @@ namespace Plutus.Xamarin
 
         private void EditGoal_Clicked(object sender, EventArgs e)
         {
-            var page = new EditGoalPage(_goal);
+            var page = new EditGoalPage(_goal, _plutusApiClient);
             NavigationPage.SetHasNavigationBar(page, false);
             Navigation.PushAsync(page);
         }

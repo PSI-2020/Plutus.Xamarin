@@ -188,6 +188,10 @@
       "Plutus.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "Xamarin.Essentials": "1.5.3.2"
+        },
         "compile": {
           "bin/placeholder/Plutus.Service.dll": {}
         },
@@ -1056,8 +1060,8 @@
     },
     "Plutus.Service/1.0.0": {
       "type": "project",
-      "path": "../../Plutus.BackEnd/Plutus.Service.csproj",
-      "msbuildProject": "../../Plutus.BackEnd/Plutus.Service.csproj"
+      "path": "../Plutus.Service/Plutus.Service.csproj",
+      "msbuildProject": "../Plutus.Service/Plutus.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1078,11 +1082,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+      "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
       "projectName": "Plutus.Xamarin",
-      "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+      "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
       "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\obj\\",
+      "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -1103,8 +1107,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.Service.csproj": {
-              "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.Service.csproj"
+            "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {
+              "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj"
             }
           }
         }

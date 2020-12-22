@@ -13,9 +13,12 @@ namespace Plutus.Xamarin
     public partial class HistoryPage : ContentPage
     {
         private readonly MenuPage _menuPage;
-        public HistoryPage(MenuPage menuPage)
+        private readonly PlutusApiClient _plutusApiClient;
+
+        public HistoryPage(MenuPage menuPage, PlutusApiClient plutusApi)
         {
             _menuPage = menuPage;
+            _plutusApiClient = plutusApi;
             InitializeComponent();
         }
     }

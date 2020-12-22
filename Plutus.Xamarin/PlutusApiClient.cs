@@ -29,13 +29,49 @@ namespace Plutus
     {
         private readonly HttpClient _httpClient = new HttpClient();
         private readonly string _path = "https://aspnet-ybkkj2yjkwqhk.azurewebsites.net";
-        /*
-        
-        public async Task PostScheduledPaymentAsync(ScheduledPayment payment, string type) => await _httpClient.PostAsJsonAsync(_path + "/api/Scheduler/" + type, payment);
-        public async Task ChangeScheduledPaymentStatusAsync(int index, string type, bool status) => await _httpClient.PutAsJsonAsync(_path + "/api/Scheduler/" + index + "/" + type + "/" + status, index);
-        public async Task CheckPaymentsAsync() => await _httpClient.PatchAsync(_path + "/api/Scheduler/", null);
-        
-        */
+
+        public async Task DeleteGoalAsync(int id) => await _httpClient.DeleteAsync(_path + "/api/Goals/" + id);
+        public async Task DeleteBudgetAsync(int index) => await _httpClient.DeleteAsync(_path + "/api/Budgets/" + index);
+        public async Task DeleteScheduledPaymentAsync(int index, string type) => await _httpClient.DeleteAsync(_path + "/api/Scheduler/" + index + "/" + type);
+
+        public async Task<decimal> GetAllCategoriesSpent(string type)
+        {
+            var response = await _httpClient.GetStringAsync(_path + "/api/Statistics/" + type);
+            var spent = JsonConvert.DeserializeObject<decimal>(response);
+            return spent;
+        }
+
+        public async Task<decimal> GetCategorySpent(string type, string category)
+        {
+            var response = await _httpClient.GetStringAsync(_path + "/api/Statistics/" + type + "/" + category);
+            var spent = JsonConvert.DeserializeObject<decimal>(response);
+            return spent;
+        }
+
+        public async Task ChangeScheduledPaymentAsync(ScheduledPayment payment, int index, string type)
+        {
+            var json = JsonConvert.SerializeObject(payment);
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            await _httpClient.PutAsync(_path + "/api/Scheduler/edit/" + index + "/" + type, httpContent);
+        }
+
+        public async Task PostScheduledPaymentAsync(ScheduledPayment payment, string type)
+        {
+            var json = JsonConvert.SerializeObject(payment);
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            await _httpClient.PostAsync(_path + "/api/Scheduler/" + type, httpContent);
+        }
+
+        public async Task ChangeScheduledPaymentStatusAsync(int index, string type, bool status)
+        {
+            var json = JsonConvert.SerializeObject(index);
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            await _httpClient.PutAsync(_path + "/api/Scheduler/" + index + "/" + type + "/" + status, httpContent);
+        }
+
         public async Task<double> GetBudgetSpentAsync(int id)
         {
             var response = await _httpClient.GetStringAsync(_path + "/api/Budgets/" + id + "/spent");
@@ -48,11 +84,6 @@ namespace Plutus
             var spent = JsonConvert.DeserializeObject<double>(response);
             return spent;
         }
-        public async Task DeleteGoalAsync(int id) => await _httpClient.DeleteAsync(_path + "/api/Goals/" + id);
-        public async Task DeleteBudgetAsync(int index) => await _httpClient.DeleteAsync(_path + "/api/Budgets/" + index);
-        public async Task DeleteScheduledPaymentAsync(int index, string type) => await _httpClient.DeleteAsync(_path + "/api/Scheduler/" + index + "/" + type);
-
-       
 
         public async Task PostBudgetAsync(Budget budget)
         {
@@ -84,7 +115,7 @@ namespace Plutus
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
             await _httpClient.PostAsync(_path + "/api/Goals/", httpContent);
         }
-        
+
         public async Task<List<Goal>> GetGoalsAsync()
         {
             var response = await _httpClient.GetStringAsync(_path + "/api/Goals/");
@@ -125,7 +156,7 @@ namespace Plutus
             var scheduledPayments = JsonConvert.DeserializeObject<List<ScheduledPayment>>(response);
             return scheduledPayments;
         }
-      
+
 
     }
 }

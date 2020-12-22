@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Plutus.Xamarin.EditScheduledPaymentPage"
              BackgroundColor="#DCD5C9">
-   <ContentPage.Content>
-    <Grid>
-        <StackLayout Padding="0,50,0,0">
-            
-        <StackLayout Padding="0,10,0,10" BackgroundColor="#726B60">
-            <Label
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Padding="0,50,0,0">
+
+                <StackLayout Padding="0,10,0,10" BackgroundColor="#726B60">
+                    <Label
                    Text="EDIT"
                    FontSize="30"
                    FontFamily="LilitaOne"
@@ -18,11 +18,11 @@
                    HorizontalOptions="Center"
                    VerticalTextAlignment="Center"
                    VerticalOptions="Center"/>
-        </StackLayout>
-             <Frame HasShadow="False" Padding="10" BackgroundColor="#DCD5C9" Margin="30,0,30,150">
-            <ScrollView>
-            <StackLayout>
-             <Label
+                </StackLayout>
+                <Frame HasShadow="False" Padding="10" BackgroundColor="#DCD5C9" Margin="30,0,30,150">
+                    <ScrollView>
+                        <StackLayout>
+                            <Label
                    Text="Name:"
                    FontSize="25"
                    FontFamily="LilitaOne"
@@ -30,7 +30,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                    HorizontalOptions="Start"/>
-             <Entry
+                            <Entry
                 x:Name="newPaymentName" 
                 TextColor="#A19C92"
                 FontSize="25"
@@ -39,7 +39,7 @@
                 HeightRequest="55"
                 BackgroundColor="#C7C1B5"
                    />
-             <Label
+                            <Label
                    Padding="0,10,0,0"
                    Text="Amount:"
                    FontFamily="LilitaOne"
@@ -48,7 +48,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                    HorizontalOptions="Start"/>
-             <Entry
+                            <Entry
                 x:Name="newPaymentAmount"
                 TextColor="#A19C92"
                 Keyboard="Numeric"
@@ -57,7 +57,7 @@
                 FontAttributes="Bold"
                 HeightRequest="55"
                 BackgroundColor="#C7C1B5"/>
-                <Label
+                            <Label
                    Padding="0,10,0,0"
                    Text="Category:"
                    FontSize="25"
@@ -66,7 +66,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                    />
-             <Picker
+                            <Picker
                 x:Name="newPaymentCategory"
                 TextColor="#A19C92"
                 FontSize="25"
@@ -74,19 +74,8 @@
                 FontAttributes="Bold"
                 HeightRequest="50"
                 BackgroundColor="#C7C1B5">
-                  <Picker.Items>
-                        <x:String>Groceries</x:String>
-                        <x:String>Restaurant</x:String>
-                        <x:String>Clothes</x:String>
-                        <x:String>Transport</x:String>
-                        <x:String>Health</x:String>
-                        <x:String>School</x:String>
-                        <x:String>Bills</x:String>
-                        <x:String>Entertainment</x:String>
-                        <x:String>Other</x:String>
-                    </Picker.Items>
-             </Picker>
-             <Label
+                            </Picker>
+                            <Label
                    Padding="0,10,0,0"
                    Text="Payment day:"
                    FontSize="25"
@@ -96,7 +85,7 @@
                    HorizontalTextAlignment="Start"
                    HorizontalOptions="Start"
                     />
-             <DatePicker
+                            <DatePicker
                 x:Name="newPaymentDay"
                 TextColor="#A19C92"
                 FontAttributes="Bold"
@@ -106,7 +95,7 @@
                 HeightRequest="55"
                 BackgroundColor="#C7C1B5"
                 />
-                <Label
+                            <Label
                    Padding="0,10,0,0"
                    Text="Frequency:"
                    FontSize="25"
@@ -115,7 +104,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                     />
-                <Picker
+                            <Picker
                 x:Name="newPaymentFrequency"
                 TextColor="#A19C92"
                 FontSize="25"
@@ -124,19 +113,19 @@
                 HeightRequest="50"
                 BackgroundColor="#C7C1B5"
                 Margin="0,0,0,10">
-                    <Picker.Items>
-                        <x:String>Monthly</x:String>
-                        <x:String>Weekly</x:String>
-                    </Picker.Items>
-                </Picker>
+                                <Picker.Items>
+                                    <x:String>Monthly</x:String>
+                                    <x:String>Weekly</x:String>
+                                </Picker.Items>
+                            </Picker>
 
 
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
             </StackLayout>
-                </ScrollView>
-                 </Frame>
-        </StackLayout>
-            
-        <Button Text="back"
+
+            <Button Text="back"
                     HeightRequest="40"
                     HorizontalOptions="End"
                     WidthRequest="50"
@@ -148,14 +137,14 @@
                     BorderColor="#C7C1B5"
                     TextColor="#726B60"
                     Clicked="ExitButton_Clicked"/>
-        <Button Margin="50,87" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
+            <Button Margin="50,87" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
                 HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
                 TextColor="White" FontFamily="LilitaOne" FontSize="25" FontAttributes="Bold" Text="change" 
-               />
-        <Button Margin="50,20" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
+               Clicked="ChangeButton_Clicked"/>
+            <Button Margin="50,20" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
                 HorizontalOptions="Center" BackgroundColor="#A3A09A" CornerRadius="15" 
                 TextColor="White" FontFamily="LilitaOne" FontSize="25" FontAttributes="Bold" Text="delete" 
-                />
-      </Grid>
+                Clicked="DeleteButton_Clicked"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

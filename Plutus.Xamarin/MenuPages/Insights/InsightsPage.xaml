@@ -1,12 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Plutus.Xamarin.InsightsPage">
+             x:Class="Plutus.Xamarin.InsightsPage"
+              BackgroundColor = "#DCD5C9">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Insights Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Button Margin="0,0,0,0"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent"
+                    TextColor="#B8AF9D"
+                    Padding="0"
+                    FontSize="60"
+                    Text="≡"
+                    Clicked="MenuButton_Clicked" />
+
+            <Button Margin="0,3,0,0"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    VerticalOptions="Start"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    CornerRadius="15" 
+                    TextColor="#A3A09A"
+                    FontSize="30"
+                    Text="✕" 
+                    Clicked="ExitButton_Clicked" />
+
+
+            <StackLayout Margin="0,60,0,0" BackgroundColor="#DCD5C9">
+                <Label 
+                   Text="INSIGHTS" FontSize="48"
+                   TextColor="#726B60"
+                   FontAttributes="Bold"
+                   FontFamily="LilitaOne"
+                   HorizontalOptions="CenterAndExpand" />
+                <!--       
+            <Picker TextColor="White"
+                FontSize="15"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                BackgroundColor="#A8A399" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="120" HorizontalOptions="Center">
+                <Picker.Items>
+                            <x:String>September 2020</x:String>
+                            <x:String>October 2020</x:String>
+                            <x:String>November 2020</x:String>
+                            <x:String>December 2020</x:String></Picker.Items> </Picker>
+                  -->
+                <Frame HasShadow="False" BackgroundColor="#CD5C9" Margin="20,3,20,10" BorderColor="Transparent" >
+                    <ScrollView>
+                        <StackLayout x:Name="statisticsStack">
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
+            </StackLayout>
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

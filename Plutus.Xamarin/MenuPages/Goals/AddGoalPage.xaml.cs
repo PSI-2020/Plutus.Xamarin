@@ -5,9 +5,10 @@ namespace Plutus.Xamarin
 {
     public partial class AddGoalPage : ContentPage
     {
-        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
-        public AddGoalPage()
+        private readonly PlutusApiClient _plutusApiClient;
+        public AddGoalPage(PlutusApiClient plutusApi)
         {
+            _plutusApiClient = plutusApi;
             InitializeComponent();
         }
         private void ExitButton_Clicked(object sender, EventArgs e)
@@ -17,7 +18,7 @@ namespace Plutus.Xamarin
         private async void AddGoal_Clicked(object sender, EventArgs e)
         {
             var verificationService = new VerificationService(); //pakeisti
-            var error = verificationService.VerifyData(name: newGoalName.Text,amount: newGoalAmount.Text);
+            var error = verificationService.VerifyData(name: newGoalName.Text, amount: newGoalAmount.Text);
             if (error == "")
             {
                 var goal = new Goal(newGoalName.Text.UppercaseFirstLetter(), double.Parse(newGoalAmount.Text), newGoalDueDate.Date);
@@ -27,7 +28,7 @@ namespace Plutus.Xamarin
             }
             else
             {
-               await DisplayAlert("Ooops...", error, "OK");
+                await DisplayAlert("Ooops...", error, "OK");
             }
         }
     }

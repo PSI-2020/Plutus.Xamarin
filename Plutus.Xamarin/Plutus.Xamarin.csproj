@@ -12,6 +12,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\LilitaOne.ttf" />
+    <None Remove="Resources\Macondo.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\LilitaOne.ttf" />
+    <EmbeddedResource Include="Resources\Macondo.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microcharts" Version="0.9.5.9" />
     <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
@@ -20,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Plutus.BackEnd\Plutus.Service.csproj" />
+    <ProjectReference Include="..\Plutus.Service\Plutus.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

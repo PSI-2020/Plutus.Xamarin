@@ -120,7 +120,8 @@
                     BackgroundColor="#DCD5C9"
                     BorderColor="#C7C1B5"
                     TextColor="#726B60"
-                    Clicked="ExitButton_Clicked"/>
+                    Clicked="ExitButton_Clicked"
+                    Padding="0"/>
             <Button Margin="50,40" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
                 HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
                 TextColor="White" FontFamily="LilitaOne" FontSize="25" FontAttributes="Bold" Text="ADD" 

@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using System.Net.Http;
-using Newtonsoft.Json;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace Plutus.Xamarin
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SchedulerPage : ContentPage
+    public partial class EditSchedulerPage : ContentPage
     {
-        private readonly MenuPage _menuPage;
         private readonly PlutusApiClient _plutusApiClient;
-        public SchedulerPage(MenuPage menuPage, PlutusApiClient plutusApi)
+
+        public EditSchedulerPage(PlutusApiClient plutusApi)
         {
-            _menuPage = menuPage;
             _plutusApiClient = plutusApi;
             InitializeComponent();
 
@@ -27,6 +22,7 @@ namespace Plutus.Xamarin
         }
         private async void LoadScheduledPaymentsAsync()
         {
+
             scheduledIncome.Children.Clear();
             scheduledExpenses.Children.Clear();
             var income = await _plutusApiClient.GetAllScheduledPaymentsAsync("MonthlyIncome");
@@ -49,7 +45,7 @@ namespace Plutus.Xamarin
         }
         private List<Grid> LoadPayments(List<ScheduledPayment> payments, string type)
         {
-            var allGrids = new List<Grid>();
+            var allPayments = new List<Grid>();
             foreach (var item in payments)
             {
                 var grid = new Grid
@@ -58,12 +54,13 @@ namespace Plutus.Xamarin
                     BackgroundColor = Color.FromHex("#726B60"),
                     ColumnDefinitions =
                     {
+                    new ColumnDefinition() { Width = new GridLength(30)},
                     new ColumnDefinition(),
-                    new ColumnDefinition()
+                    new ColumnDefinition() { Width = new GridLength(30)}
                     }
                 };
 
-                var stack = new StackLayout
+                var scheduledPayment = new StackLayout
                 {
                     Padding = new Thickness(10, 0, 0, 0),
                 };
@@ -88,39 +85,65 @@ namespace Plutus.Xamarin
                     FontAttributes = FontAttributes.Bold,
                     Text = item.Amount.ToString("C2") + " " + item.Frequency
                 };
-                var switchButton = new Switch
+                var editButton = new Button
                 {
-                    OnColor = Color.FromHex("#4C8C5E"),
-                    ThumbColor = Color.FromHex("#939291"),
+                    Text = "edit",
+                    TextTransform = TextTransform.Lowercase,
+                    FontAttributes = FontAttributes.Bold,
+                    BackgroundColor = Color.Transparent,
+                    TextColor = Color.FromHex("#CEC4B4"),
                     VerticalOptions = LayoutOptions.Center,
                     HorizontalOptions = LayoutOptions.End,
-                    IsToggled = item.Active
+                    Padding = 0,
+                    WidthRequest = 60,
+                    HeightRequest = 20
+
                 };
-                switchButton.Toggled += async (s, e) =>
+                editButton.Clicked += (s, e) =>
                 {
                     var index = payments.IndexOf(item);
-                    await _plutusApiClient.ChangeScheduledPaymentStatusAsync(index, type, switchButton.IsToggled);
+                    var editScheduledPaymentPage = new EditScheduledPaymentPage(index,type,payments,_plutusApiClient);
+                    NavigationPage.SetHasNavigationBar(editScheduledPaymentPage, false);
+                    Navigation.PushAsync(editScheduledPaymentPage);
                 };
 
-                stack.Children.Add(nameLabel);
-                stack.Children.Add(amountLabel);
-                grid.Children.Add(stack, 0, 0);
-                grid.Children.Add(switchButton, 1, 0);
+                var deleteButton = new Button
+                {
+                    Text = "-",
+                    FontAttributes = FontAttributes.Bold,
+                    TextColor = Color.White,
+                    BackgroundColor = Color.FromHex("#864F48"),
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Start,
+                    Padding = 0,
+                    WidthRequest = 20,
+                    HeightRequest = 20,
+                    CornerRadius = 50,
+                    Margin = new Thickness(5, 0, 0, 0)
 
-                allGrids.Add(grid);
+                };
+                deleteButton.Clicked += async (s, e) =>
+                {
+                   var index = payments.IndexOf(item);
+                   await _plutusApiClient.DeleteScheduledPaymentAsync(index, type);
+                   LoadScheduledPaymentsAsync();
+                };
+
+                scheduledPayment.Children.Add(nameLabel);
+                scheduledPayment.Children.Add(amountLabel);
+                grid.Children.Add(scheduledPayment, 1, 0);
+                grid.Children.Add(editButton, 2, 0);
+                grid.Children.Add(deleteButton, 0, 0);
+                allPayments.Add(grid);
             }
-            return allGrids;
+            
+            return allPayments;
 
         }
 
-        private void AddScheduledPayment_Clicked(object sender, EventArgs e)
-        {
-            var schedulerAddPage = new SchedulerAddPage(_menuPage, _plutusApiClient);
-            NavigationPage.SetHasNavigationBar(schedulerAddPage, false);
-            Navigation.PushAsync(schedulerAddPage);
-        }
         private void MenuButton_Clicked(object sender, EventArgs e)
         {
+            this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
             Application.Current.MainPage.Navigation.PopAsync();
         }
 
@@ -131,12 +154,9 @@ namespace Plutus.Xamarin
             Navigation.PushAsync(page);
 
         }
-        private void EditScheduledPayment_Clicked(object sender, EventArgs e)
+        private void DoneButton_Clicked(object sender, EventArgs e)
         {
-            var editSchedulerPage = new EditSchedulerPage(_plutusApiClient);
-            NavigationPage.SetHasNavigationBar(editSchedulerPage, false);
-            Navigation.PushAsync(editSchedulerPage);
-
+            Application.Current.MainPage.Navigation.PopAsync();
         }
     }
 }

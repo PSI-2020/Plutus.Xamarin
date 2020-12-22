@@ -12,6 +12,7 @@ namespace Plutus.Xamarin
             Text = goal.Name;
             TextColor = Color.White;
             FontAttributes = FontAttributes.Bold;
+            FontFamily = "LilitaOne";
             FontSize = 20;
             Goal = goal;
         }

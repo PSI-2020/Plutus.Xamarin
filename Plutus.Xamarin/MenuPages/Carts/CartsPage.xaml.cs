@@ -13,9 +13,11 @@ namespace Plutus.Xamarin
     public partial class CartsPage : ContentPage
     {
         private readonly MenuPage _menuPage;
-        public CartsPage(MenuPage menuPage)
+        private readonly PlutusApiClient _plutusApiClient;
+        public CartsPage(MenuPage menuPage, PlutusApiClient plutusApi)
         {
             _menuPage = menuPage;
+            _plutusApiClient = plutusApi;
             InitializeComponent();
         }
     }

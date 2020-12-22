@@ -19,9 +19,11 @@
                     TextColor="#726B60"
                     Clicked="ExitButton_Clicked"/>
 
-            <StackLayout Margin="40,70">
-                
-                <Label
+            <StackLayout Padding="0,50,0,0">
+                <Frame HasShadow="False" Padding="10" BackgroundColor="#DCD5C9" Margin="30,0,30,150">
+                    <ScrollView>
+                        <StackLayout>
+                            <Label
                    Padding="0,10,0,0"
                    Text="Name:"
                    FontFamily="LilitaOne"
@@ -30,7 +32,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                    />
-                <Entry
+                            <Entry
                 x:Name="paymentName"
                 TextColor="#A19C92"
                 FontSize="25"
@@ -38,8 +40,8 @@
                 FontFamily="LilitaOne"
                 HeightRequest="50"
                 BackgroundColor="#C7C1B5"/>
-                
-                <Label
+
+                            <Label
                    Padding="0,10,0,0"
                    Text="Amount:"
                    FontSize="25"
@@ -48,7 +50,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                    />
-                <Entry
+                            <Entry
                 x:Name="paymentAmount"
                 TextColor="#A19C92"
                 Keyboard="Numeric"
@@ -57,7 +59,25 @@
                 FontAttributes="Bold"
                 HeightRequest="50"
                 BackgroundColor="#C7C1B5"/>
-                <Label
+                            <Label
+                   Padding="0,10,0,0"
+                   Text="Category:"
+                   FontSize="25"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   />
+                            <Picker
+                x:Name="paymentCategory"
+                TextColor="#A19C92"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5">
+                            </Picker>
+                            <Label
                    Padding="0,10,0,0"
                    Text="First Payment:"
                    FontSize="25"
@@ -66,7 +86,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                     />
-                <DatePicker
+                            <DatePicker
                 x:Name="paymentFirstPay"
                 TextColor="#A19C92"
                 FontAttributes="Bold"
@@ -76,7 +96,7 @@
                 HeightRequest="50"
                 BackgroundColor="#C7C1B5"
                 />
-                <Label
+                            <Label
                    Padding="0,10,0,0"
                    Text="Frequency:"
                    FontSize="25"
@@ -85,7 +105,7 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Start"
                     />
-                <Picker
+                            <Picker
                 x:Name="paymentFrequency"
                 TextColor="#A19C92"
                 FontSize="25"
@@ -93,11 +113,14 @@
                 FontFamily="LilitaOne"
                 HeightRequest="50"
                 BackgroundColor="#C7C1B5">
-                    <Picker.Items>
-                        <x:String>Monthly</x:String>
-                        <x:String>Weekly</x:String>
-                    </Picker.Items>
-                </Picker>
+                                <Picker.Items>
+                                    <x:String>Monthly</x:String>
+                                    <x:String>Weekly</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
             </StackLayout>
             <Button Margin="50,40" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
                 HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 

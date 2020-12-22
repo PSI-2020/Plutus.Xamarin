@@ -4,28 +4,28 @@
              x:Class="Plutus.Xamarin.SchedulerAddPage"          BackgroundColor="#DCD5C9">
     <ContentPage.Content>
         <Grid >
-            <Button Margin="10,20,0,0"
-                    WidthRequest="61"
+            <Button Margin="0,0,0,0"
+                    WidthRequest="60"
+                    HeightRequest="60"
                     VerticalOptions="Start"
                     HorizontalOptions="Start"
-                    BackgroundColor="#B8AF9D"
-                    CornerRadius="15" 
-                    TextColor="White"
-                    FontSize="13"
-                    Text="menu"
-                    FontFamily="LilitaOne"
+                    BackgroundColor="Transparent"
+                    TextColor="#B8AF9D"
+                    Padding="0"
+                    FontSize="60"
+                    Text="≡"
                     Clicked="MenuButton_Clicked" />
 
-            <Button Margin="0,20,10,0"
-                    WidthRequest="61"
+            <Button Margin="0,3,0,0"
+                    WidthRequest="60"
+                    HeightRequest="60"
                     VerticalOptions="Start"
                     HorizontalOptions="End"
-                    BackgroundColor="#B8AF9D"
+                    BackgroundColor="Transparent"
                     CornerRadius="15" 
-                    TextColor="White"
-                    FontSize="13"
-                    FontFamily="LilitaOne"
-                    Text="exit" 
+                    TextColor="#A3A09A"
+                    FontSize="30"
+                    Text="✕" 
                     Clicked="ExitButton_Clicked" />
 
             <Label Padding="0,60,0,0"
@@ -48,13 +48,17 @@
                         HorizontalOptions="CenterAndExpand"
                         VerticalOptions="CenterAndExpand">
                 <StackLayout>
-                    <Button HeightRequest="60"
+                    <Button HeightRequest="70"
                             WidthRequest="100"
                             BackgroundColor="#A3A09A"
-                            TextColor="White"
+                            TextColor="#BE4343"
                             FontFamily="LilitaOne"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            Padding="0"
                             Text="-"
-                            FontSize="Title"
+                            FontSize="50"
+                            CornerRadius="23"
                             Clicked="ScheduledExpense_Clicked"/>
                     <Label Text="expense"
                            FontAttributes="Bold"
@@ -64,14 +68,19 @@
                 </StackLayout>
                 <Label WidthRequest="50"></Label>
                 <StackLayout>
-                    <Button HeightRequest="60"
+                    <Button HeightRequest="70"
                             WidthRequest="100"
                             BackgroundColor="#A3A09A"
-                            TextColor="White"
+                            TextColor="#87C127"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
                             FontFamily="LilitaOne"
-                            FontSize="Title"
+                            FontSize="50"
+                            Padding="0"
+                            CornerRadius="23"
                             Text="+"
                             Clicked="ScheduledIncome_Clicked"/>
+
                     <Label TextColor="#726B60"
                            FontFamily="LilitaOne"
                            FontAttributes="Bold"

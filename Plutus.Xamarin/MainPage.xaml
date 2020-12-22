@@ -4,8 +4,19 @@
              x:Class="Plutus.Xamarin.MainPage"
              BackgroundColor="#DCD5C9">
     <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button BackgroundColor="#A3A09A" TextColor="White" FontSize="10" AbsoluteLayout.LayoutBounds="0.1, 0.05, 0.2, 0.1" AbsoluteLayout.LayoutFlags="All" CornerRadius="15" Text="Menu" Clicked="MenuButton_Clicked">
-        </Button>
+        <Button Margin="0,0,0,0"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent"
+                    TextColor="#B8AF9D"
+                    Padding="0"
+                    FontSize="60"
+                    Text="≡"
+                    Clicked="MenuButton_Clicked" />
+
+
     </AbsoluteLayout>
 
 

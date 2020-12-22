@@ -14,31 +14,29 @@ namespace Plutus.Xamarin
         readonly GoalsPage _goalsPage;
         readonly BudgetsPage _budgetsPage;
         readonly CartsPage _cartsPage;
-        readonly SchedulerAddPage _schedulerAddPage;
-        public MenuPage(MenuPage menuPage)
+        private readonly PlutusApiClient _plutusApiClient;
+        public MenuPage(MenuPage menuPage, PlutusApiClient plutusApi)
         {
             _menuPage = menuPage;
+            _plutusApiClient = plutusApi;
             InitializeComponent();
 
-            _historyPage = new HistoryPage(_menuPage);
+            _historyPage = new HistoryPage(_menuPage, _plutusApiClient);
             NavigationPage.SetHasNavigationBar(_historyPage, false);
-           
-            _insightsPage = new InsightsPage(_menuPage);
+
+            _insightsPage = new InsightsPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(_insightsPage, false);
 
-            _schedulerPage = new SchedulerPage(_menuPage);
+            _schedulerPage = new SchedulerPage(_menuPage, _plutusApiClient);
             NavigationPage.SetHasNavigationBar(_schedulerPage, false);
 
-            _schedulerAddPage = new SchedulerAddPage(_menuPage);
-            NavigationPage.SetHasNavigationBar(_schedulerAddPage, false);
-
-            _goalsPage = new GoalsPage();
+            _goalsPage = new GoalsPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(_goalsPage, false);
 
-            _budgetsPage = new BudgetsPage();
+            _budgetsPage = new BudgetsPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(_budgetsPage, false);
 
-            _cartsPage = new CartsPage(_menuPage);
+            _cartsPage = new CartsPage(_menuPage, _plutusApiClient);
             NavigationPage.SetHasNavigationBar(_cartsPage, false);
         }
 
@@ -52,7 +50,7 @@ namespace Plutus.Xamarin
         }
         private void SchedulerPage_Clicked(object sender, EventArgs e)
         {
-             Navigation.PushAsync(_schedulerPage);
+            Navigation.PushAsync(_schedulerPage);
         }
         private void GoalsPage_Clicked(object sender, EventArgs e)
         {
@@ -65,6 +63,11 @@ namespace Plutus.Xamarin
         private void CartsPage_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(_cartsPage);
+        }
+
+        private void ExitButton_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PopAsync();
         }
     }
 }

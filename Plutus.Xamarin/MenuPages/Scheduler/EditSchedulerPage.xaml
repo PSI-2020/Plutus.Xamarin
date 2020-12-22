@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Plutus.Xamarin.SchedulerPage"
-             BackgroundColor = "#DCD5C9">
+             x:Class="Plutus.Xamarin.EditSchedulerPage"
+            BackgroundColor = "#DCD5C9">
 
     <ContentPage.Content>
         <Grid>
 
-            <Button Margin="0,0,0,0"
+           <Button Margin="0,0,0,0"
                     WidthRequest="60"
                     HeightRequest="60"
                     VerticalOptions="Start"
@@ -48,7 +48,7 @@
 
                         <Button 
                         TextColor="White"
-                        Text="edit"
+                        Text="done"
                         TextTransform="Lowercase"
                         FontAttributes="Bold"
                         FontSize="10"
@@ -56,7 +56,7 @@
                         Grid.Column="1"
                         BackgroundColor="Transparent"
                         FontFamily="LilitaOne"
-                        Clicked="EditScheduledPayment_Clicked"
+                        Clicked="DoneButton_Clicked"
                         HeightRequest="30"
                         VerticalOptions="Start"
                         Margin="0,0,5,0"/>
@@ -110,10 +110,7 @@
                 </StackLayout>
             </Grid>
 
-            <Button Margin="30" WidthRequest="60" HeightRequest="50" VerticalOptions="End"
-                HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
-                TextColor="#DCD5C9" FontSize="35" FontFamily="LilitaOne" Text="+" Padding="0"
-                    Clicked="AddScheduledPayment_Clicked" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+

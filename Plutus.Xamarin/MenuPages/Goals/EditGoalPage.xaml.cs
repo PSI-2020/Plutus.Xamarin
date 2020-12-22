@@ -7,10 +7,11 @@ namespace Plutus.Xamarin
     public partial class EditGoalPage : ContentPage
     {
         private readonly Goal _goal;
-        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
-        public EditGoalPage(Goal goal)
+        private readonly PlutusApiClient _plutusApiClient;
+        public EditGoalPage(Goal goal, PlutusApiClient plutusApi)
         {
             _goal = goal;
+            _plutusApiClient = plutusApi;
             InitializeComponent();
             LoadContent();
         }

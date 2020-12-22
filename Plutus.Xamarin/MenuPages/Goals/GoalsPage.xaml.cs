@@ -10,10 +10,11 @@ namespace Plutus.Xamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GoalsPage : ContentPage
     {
-        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
+        private readonly PlutusApiClient _plutusApiClient;
 
-        public GoalsPage()
+        public GoalsPage(PlutusApiClient plutusApi)
         {
+            _plutusApiClient = plutusApi;
             InitializeComponent();
         }
         protected override void OnAppearing()
@@ -44,7 +45,7 @@ namespace Plutus.Xamarin
 
         private void AddGoal_Clicked(object sender, EventArgs e)
         {
-            var addGoalPage = new AddGoalPage();
+            var addGoalPage = new AddGoalPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(addGoalPage, false);
             Navigation.PushAsync(addGoalPage);
         }
@@ -56,14 +57,14 @@ namespace Plutus.Xamarin
 
         private void ExitButton_Clicked(object sender, EventArgs e)
         {
-            var page = new MainPage();
+            var page = new MainPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(page, false);
             Navigation.PushAsync(page);
         }
         private void GoalButton_Clicked(object sender, EventArgs e)
         {
             var button = (GoalButton)sender;
-            var page = new CheckGoalPage(button.Goal);
+            var page = new CheckGoalPage(button.Goal, _plutusApiClient);
             NavigationPage.SetHasNavigationBar(page, false);
             Navigation.PushAsync(page);
 

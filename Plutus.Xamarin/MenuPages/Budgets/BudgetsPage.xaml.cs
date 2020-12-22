@@ -13,9 +13,10 @@ namespace Plutus.Xamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BudgetsPage : ContentPage
     {
-        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
-        public BudgetsPage()
+        private readonly PlutusApiClient _plutusApiClient;
+        public BudgetsPage(PlutusApiClient plutusApi)
         {
+            _plutusApiClient = plutusApi;
             InitializeComponent();
         }
         protected override void OnAppearing()
@@ -37,18 +38,15 @@ namespace Plutus.Xamarin
         private async Task<StackLayout> LoadBudget(Budget budget)
         {
 
-            var budgetSum = Convert.ToInt32(budget.Sum);
             var from = budget.From.ConvertToDate();
             var to = budget.To.ConvertToDate();
             var index = int.Parse(budget.Name.Substring(6));
             var spent = await _plutusApiClient.GetBudgetSpentAsync(index);
             var left = await _plutusApiClient.GetBudgetLeftToSpendAsync(index);
-            var alreadySpent = Convert.ToInt32(spent);
-            var leftToSpend = Convert.ToInt32(left);
 
-            if (alreadySpent > budgetSum)
+            if (spent > budget.Sum)
             {
-                leftToSpend = 0;
+                left = 0;
             }
 
             var stack = new StackLayout()
@@ -78,6 +76,7 @@ namespace Plutus.Xamarin
                 FontFamily = "LilitaOne",
                 HorizontalOptions = LayoutOptions.Center
             };
+            var chartGrid = new Grid();
             var chartView = new Microcharts.Forms.ChartView()
             {
                 HeightRequest = 150
@@ -87,16 +86,74 @@ namespace Plutus.Xamarin
                 BackgroundColor = SKColor.Parse("CEC4B3"),
                 Entries = new List<ChartEntry>
                 {
-                  new ChartEntry(alreadySpent)
+                  new ChartEntry(Convert.ToInt32(spent))
                   {
                     Color = SKColor.Parse("864F48"),
                    },
-                  new ChartEntry(leftToSpend)
+                  new ChartEntry(Convert.ToInt32(left))
                   {
                    Color = SKColor.Parse("8E897E"),
                   }
                 }
             };
+            var chartLabel = new Label()
+            {
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                Text = (spent / budget.Sum * 100).ToString("F0") + "%",
+                TextColor = Color.White,
+                FontFamily = "LilitaOne",
+                FontAttributes = FontAttributes.Bold,
+                BackgroundColor = Color.Transparent,
+                Padding = 0
+
+            };
+            chartGrid.Children.Add(chartView, 0, 0);
+            chartGrid.Children.Add(chartLabel, 0, 0);
+            var spentGrid = new Grid()
+            {
+                HeightRequest = 20,
+                ColumnDefinitions =
+                    {
+                    new ColumnDefinition(),
+                    new ColumnDefinition() { Width = 1 },
+                    new ColumnDefinition()
+                    }
+            };
+            var spentLabel = new Label()
+            {
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.End,
+                Text = "Spent: " + spent.ToString("C2") + " ",
+                TextColor = Color.White,
+                FontFamily = "LilitaOne",
+                FontAttributes = FontAttributes.Bold,
+                BackgroundColor = Color.Transparent,
+                Padding = 0
+
+            };
+            var line = new BoxView()
+            {
+                BackgroundColor = Color.White,
+                WidthRequest = 1,
+                VerticalOptions = LayoutOptions.Fill,
+                HorizontalOptions = LayoutOptions.Center
+            };
+            var leftLabel = new Label()
+            {
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Start,
+                Text = " Left: " + left.ToString("C2"),
+                TextColor = Color.White,
+                FontFamily = "LilitaOne",
+                FontAttributes = FontAttributes.Bold,
+                BackgroundColor = Color.Transparent,
+                Padding = 0
+
+            };
+            spentGrid.Children.Add(spentLabel, 0, 0);
+            spentGrid.Children.Add(line, 1, 0);
+            spentGrid.Children.Add(leftLabel, 2, 0);
 
             var grid = new Grid()
             {
@@ -143,7 +200,8 @@ namespace Plutus.Xamarin
             stack.Children.Add(budgetCategory);
             stack.Children.Add(labelFrom);
             stack.Children.Add(labelTo);
-            stack.Children.Add(chartView);
+            stack.Children.Add(chartGrid);
+            stack.Children.Add(spentGrid);
             stack.Children.Add(grid);
 
             return stack;
@@ -152,7 +210,7 @@ namespace Plutus.Xamarin
 
         private void AddBudget_Clicked(object sender, EventArgs e)
         {
-            var addBudgetPage = new AddBudgetPage();
+            var addBudgetPage = new AddBudgetPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(addBudgetPage, false);
             Navigation.PushAsync(addBudgetPage);
         }
@@ -163,7 +221,7 @@ namespace Plutus.Xamarin
 
         private void ExitButton_Clicked(object sender, EventArgs e)
         {
-            var page = new MainPage();
+            var page = new MainPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(page, false);
             Navigation.PushAsync(page);
 

@@ -5,9 +5,10 @@ namespace Plutus.Xamarin
 {
     public partial class AddBudgetPage : ContentPage
     {
-        private readonly PlutusApiClient _plutusApiClient = new PlutusApiClient();
-        public AddBudgetPage()
+        private readonly PlutusApiClient _plutusApiClient;
+        public AddBudgetPage(PlutusApiClient plutusApi)
         {
+            _plutusApiClient = plutusApi;
             InitializeComponent();
             budgetCategory.SelectedIndex = 0;
         }
@@ -25,6 +26,7 @@ namespace Plutus.Xamarin
                 var list = await _plutusApiClient.GetBudgetsListAsync();
                 await _plutusApiClient.PostBudgetAsync(new Budget("budget" + list.Count, budgetCategory.SelectedItem.ToString(), double.Parse(budgetAmount.Text), budgetFrom.Date, budgetTo.Date));
                 await DisplayAlert("Success!", "Budget added succesfully", "OK");
+
                 await Application.Current.MainPage.Navigation.PopAsync();
             }
             else
