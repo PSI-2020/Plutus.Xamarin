@@ -194,6 +194,13 @@ namespace Plutus.Xamarin
                 BackgroundColor = Color.FromHex("979185"),
                 HeightRequest = 30
             };
+            showDetailsButton.Clicked += (s, e) =>
+            {
+                var page = new ShowDetailsBudget(index, _plutusApiClient);
+                NavigationPage.SetHasNavigationBar(page, false);
+                Navigation.PushAsync(page);
+
+            };
             grid.Children.Add(deleteButton, 0, 0);
             grid.Children.Add(showDetailsButton, 1, 0);
 

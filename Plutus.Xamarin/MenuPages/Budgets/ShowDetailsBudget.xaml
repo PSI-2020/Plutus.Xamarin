@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.ShowDetailsBudget"
+             BackgroundColor = "#DCD5C9">
+    <ContentPage.Content>
+        <Grid>
+         <Button Margin="0,0,0,0"
+                 Padding="0"
+                    WidthRequest="40"
+                    HeightRequest="50"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent"
+                    CornerRadius="15" 
+                    TextColor="#A3A09A"
+                    FontFamily="LilitaOne"
+                    FontSize="30"
+                    Text="&lt;" 
+                    Clicked="ExitButton_Clicked" />
+
+          <!-- <Frame Margin="70,10,70,560" BackgroundColor="#726B60" HasShadow="False" BorderColor="#8D8B86" CornerRadius="20" Padding="0">
+               <Frame Margin="5,5,5,5" BackgroundColor="#A8A399" HasShadow="False"  CornerRadius="15" Padding="0">
+              <Label x:Name="budgetName"
+                Padding="0,5,0,0"
+                FontSize="16"
+                TextTransform="Uppercase"
+                TextColor="#504E4A"
+                FontAttributes="Bold"
+                FontFamily="LilitaOne"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+              </Frame>
+              </Frame>-->
+            <Frame BackgroundColor="Transparent" Padding="1" HasShadow="False" Margin = "20,70,20,20"  CornerRadius="0">
+            <StackLayout Spacing="0">
+            <Grid ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86"  ColumnDefinitions="*,*,*,*" RowDefinitions="30">
+          
+             <Label Grid.Row="0" Grid.Column="0" Text="Date" TextColor="White" FontFamily="LilitaOne" FontAttributes="Bold"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+             <Label Grid.Row="0" Grid.Column="1" Text="Name" TextColor="White" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+             <Label Grid.Row="0" Grid.Column="2" Text="Amount" TextColor="White" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+             <Label Grid.Row="0" Grid.Column="3" Text="Category" TextColor="White" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+            </Grid>
+            <ScrollView>
+              <Grid x:Name="budgetData" RowSpacing="0" ColumnSpacing="2" BackgroundColor="#8D8B86"  ColumnDefinitions="*,*,*,*"/>
+                 </ScrollView>
+          
+            </StackLayout>
+                </Frame>
+
+            </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
