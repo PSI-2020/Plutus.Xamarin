@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CJufyqYSynFXfDP8nOxHwt4BzEoNt7X28AtIWtH4hTHtbo5cqqBCQlCNQmxbZHD0p5WwocKECW1p/yow2zA0jg==",
+  "dgSpecHash": "eQumd0rFGFxDHkPclSsEleGrGpF5a8kRhX0IujIZuOwzs+Vxn2MPujBfFhINMnW4LFezMcbuuayuB7tF6l4c/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.BackEnd.csproj",
+  "projectFilePath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Simona\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Simona\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

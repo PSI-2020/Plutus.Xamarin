@@ -123,12 +123,12 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Plutus.Xamarin\Plutus.Xamarin.csproj">
-      <Project>{ca54896a-8a82-47b4-8694-652badabb630}</Project>
+    <ProjectReference Include="..\Plutus.Xamarin\Plutus.Xamarin.csproj">
+      <Project>{2beb8ec4-0e28-4aeb-9bb5-1f977fd7ac94}</Project>
       <Name>Plutus.Xamarin</Name>
     </ProjectReference>
   </ItemGroup>

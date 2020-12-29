@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qGiW88U3cPLjdMG6nd2Z8eSmwVVYjkjjqwAsjFbGqwogdcpserCioT2IlA1zBsm/kfg3teU7vE51+yJvNEosEw==",
+  "dgSpecHash": "x3v6D/FrJpyev5ZmztYH4n68I2H0K8aukov2aujGhcQtBp6VXE8tuo/i0kO9s6+4unvxd/Qj4MEMj/JzcCbhYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+  "projectFilePath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Simona\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
     "C:\\Users\\Simona\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",

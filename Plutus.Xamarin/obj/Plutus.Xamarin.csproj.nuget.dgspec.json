@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {}
+    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.Service.csproj": {
+    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.Service.csproj",
+        "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
         "projectName": "Plutus.Service",
-        "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.Service.csproj",
+        "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
         "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -49,6 +49,14 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.2, )"
             }
           },
           "imports": [
@@ -65,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {
+    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+        "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
         "projectName": "Plutus.Xamarin",
-        "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+        "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
         "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin\\obj\\",
+        "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -93,8 +101,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.Service.csproj": {
-                "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.Service.csproj"
+              "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {
+                "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj"
               }
             }
           }

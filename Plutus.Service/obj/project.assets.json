@@ -344,11 +344,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.BackEnd.csproj",
-      "projectName": "Plutus.BackEnd",
-      "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.BackEnd.csproj",
+      "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
+      "projectName": "Plutus.Service",
+      "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
       "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\obj\\",
+      "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

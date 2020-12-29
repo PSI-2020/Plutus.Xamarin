@@ -1,0 +1,8 @@
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\bin\Debug\netstandard2.0\Plutus.Service.deps.json
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\bin\Debug\netstandard2.0\Plutus.Service.dll
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\bin\Debug\netstandard2.0\Plutus.Service.pdb
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.AssemblyInfoInputs.cache
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.AssemblyInfo.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.csproj.CoreCompileInputs.cache
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.dll
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Simona\\source\\repos\\Plutus.App\\Plutus.App.Android\\Plutus.Android.csproj": {}
+    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Android\\Plutus.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Simona\\source\\repos\\Plutus.App\\Plutus.App.Android\\Plutus.Android.csproj": {
+    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Android\\Plutus.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simona\\source\\repos\\Plutus.App\\Plutus.App.Android\\Plutus.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Android\\Plutus.Android.csproj",
         "projectName": "Plutus.Android",
-        "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.App\\Plutus.App.Android\\Plutus.Android.csproj",
+        "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Android\\Plutus.Android.csproj",
         "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simona\\source\\repos\\Plutus.App\\Plutus.App.Android\\obj\\",
+        "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -23,45 +23,45 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "monoandroid90"
+          "monoandroid10.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "monoandroid90": {
+          "monoandroid10.0": {
             "projectReferences": {
-              "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {
-                "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin.csproj"
+              "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {
+                "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj"
               }
             }
           }
         }
       },
       "frameworks": {
-        "monoandroid90": {
+        "monoandroid10.0": {
           "dependencies": {
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.6.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1451, )"
+              "version": "[4.8.0.1821, )"
             }
           }
         }
       }
     },
-    "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.BackEnd.csproj": {
+    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.BackEnd.csproj",
-        "projectName": "Plutus.BackEnd",
-        "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
+        "projectName": "Plutus.Service",
+        "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
         "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -123,14 +123,14 @@
         }
       }
     },
-    "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {
+    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+        "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
         "projectName": "Plutus.Xamarin",
-        "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
+        "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj",
         "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simona\\source\\repos\\Plutus.Xamarin\\obj\\",
+        "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -151,8 +151,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.BackEnd.csproj": {
-                "projectPath": "C:\\Users\\Simona\\source\\repos\\Plutus.BackEnd\\Plutus.BackEnd.csproj"
+              "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {
+                "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj"
               }
             }
           }
@@ -167,6 +167,14 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Microcharts": {
+              "target": "Package",
+              "version": "[0.9.5.9, )"
+            },
+            "Microcharts.Forms": {
+              "target": "Package",
+              "version": "[0.9.5.9, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -183,7 +191,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1451, )"
+              "version": "[4.8.0.1687, )"
             }
           },
           "imports": [

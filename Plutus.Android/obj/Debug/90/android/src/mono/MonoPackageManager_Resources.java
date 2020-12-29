@@ -3,9 +3,16 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Plutus.App.Android.dll" comes first in this list. */
 		"Plutus.App.Android.dll",
-		"Plutus.BackEnd.dll",
+		"Plutus.Service.dll",
 		"FormsViewGroup.dll",
+		"Microcharts.dll",
+		"Microcharts.Droid.dll",
+		"Microcharts.Forms.dll",
+		"Newtonsoft.Json.dll",
 		"Plutus.Xamarin.dll",
+		"SkiaSharp.dll",
+		"SkiaSharp.Views.Android.dll",
+		"SkiaSharp.Views.Forms.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

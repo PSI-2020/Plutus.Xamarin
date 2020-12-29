@@ -1,11 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "yhnzdPErLaghSQQ5rPY6FV7s4IeaWCMlhw7Dz3jbH6IULihm5f2Z9oWrDPHVmz9MIHcUPjbnW9Zm/02+RgPV3g==",
+  "dgSpecHash": "5BxcMnMnYZYnfU66V4HQOsE1JGXryd4x9scPA92h3JYNG48X4FZcx4TdDp0kvss9lyxkdpQFfFitDXMs6HuG8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Simona\\source\\repos\\Plutus.App\\Plutus.App.iOS\\Plutus.App.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.iOS\\Plutus.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\Simona\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+    "C:\\Users\\Simona\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\skiasharp\\2.80.2\\skiasharp.2.80.2.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\skiasharp.views\\2.80.2\\skiasharp.views.2.80.2.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\skiasharp.views.forms\\2.80.2\\skiasharp.views.forms.2.80.2.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\xamarin.essentials\\1.6.0\\xamarin.essentials.1.6.0.nupkg.sha512",
+    "C:\\Users\\Simona\\.nuget\\packages\\xamarin.forms\\4.8.0.1821\\xamarin.forms.4.8.0.1821.nupkg.sha512"
   ],
   "logs": []
 }
