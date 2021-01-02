@@ -21,7 +21,7 @@ namespace Plutus.Xamarin
             _plutusApiClient = plutusApi;
             InitializeComponent();
 
-            _historyPage = new HistoryPage(_menuPage, _plutusApiClient);
+            _historyPage = new HistoryPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(_historyPage, false);
 
             _insightsPage = new InsightsPage(_plutusApiClient);
