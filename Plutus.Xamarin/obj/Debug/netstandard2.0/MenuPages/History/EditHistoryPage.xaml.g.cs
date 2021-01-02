@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.MenuPages.History.HistoryPage.xaml", "MenuPages/History/HistoryPage.xaml", typeof(global::Plutus.Xamarin.HistoryPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.MenuPages.History.EditHistoryPage.xaml", "MenuPages/History/EditHistoryPage.xaml", typeof(global::Plutus.Xamarin.EditHistoryPage))]
 
 namespace Plutus.Xamarin {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MenuPages\\History\\HistoryPage.xaml")]
-    public partial class HistoryPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MenuPages\\History\\EditHistoryPage.xaml")]
+    public partial class EditHistoryPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Picker dataPicker;
@@ -27,7 +27,7 @@ namespace Plutus.Xamarin {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(HistoryPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(EditHistoryPage));
             dataPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "dataPicker");
             scroll = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ScrollView>(this, "scroll");
             data = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "data");

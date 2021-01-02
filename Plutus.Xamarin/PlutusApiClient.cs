@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Plutus.WebService;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Http;
@@ -33,6 +34,36 @@ namespace Plutus
         public async Task DeleteGoalAsync(int id) => await _httpClient.DeleteAsync(_path + "/api/Goals/" + id);
         public async Task DeleteBudgetAsync(int index) => await _httpClient.DeleteAsync(_path + "/api/Budgets/" + index);
         public async Task DeleteScheduledPaymentAsync(int index, string type) => await _httpClient.DeleteAsync(_path + "/api/Scheduler/" + index + "/" + type);
+
+        public async Task EditPaymentAsync(Payment payment, int index, DataType type)
+        {
+            var json = JsonConvert.SerializeObject(payment);
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            await _httpClient.PutAsync(_path + "/api/Payment/" + type + "/" + index, httpContent);
+        }
+
+        public async Task DeletePaymentAsync(Payment payment, DataType type)
+        {
+            var json = JsonConvert.SerializeObject(payment);
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            await _httpClient.PutAsync(_path + "/api/Payment/" + type, httpContent);
+        }
+
+        public async Task<List<History>> GetHistoryAsync(int index)
+        {
+            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index);
+            var history = JsonConvert.DeserializeObject<List<History>>(response);
+            return history;
+        }
+
+        public async Task<List<Payment>> GetPaymentsAsync(string type)
+        {
+            var response = await _httpClient.GetStringAsync(_path + "/api/Payment/" + type);
+            var payments = JsonConvert.DeserializeObject<List<Payment>>(response);
+            return payments;
+        }
 
         public async Task<decimal> GetAllCategoriesSpent(string type)
         {

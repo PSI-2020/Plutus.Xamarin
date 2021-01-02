@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.FilterExpensePage"
+             BackgroundColor="#DCD5C9">
+    <ContentPage.Content>
+             <Grid>
+
+            <Button Margin="0,3,0,0"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    VerticalOptions="Start"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    CornerRadius="15" 
+                    TextColor="#A3A09A"
+                    FontSize="30"
+                    Text="✕" 
+                    Clicked="ExitButton_Clicked" />
+           
+            <Label Margin="15,50,15,10"
+                   Text="Filters" FontSize="40"
+                   TextColor="#726B60"
+                   FontAttributes="Bold"
+                   FontFamily="LilitaOne"
+                   HorizontalOptions="CenterAndExpand" />
+                 <StackLayout Margin="12,120,15,10">
+
+                     <Label Text="Name:" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" FontFamily="LilitaOne" TextColor="#726B60"/>
+                     <Frame CornerRadius="20" Margin="70,0,70,0" HasShadow="False" BackgroundColor="#726B60" HeightRequest="40">
+                         <Entry x:Name="name" BackgroundColor="#CDC7BC" FontAttributes="Bold" FontFamily="LilitaOne" TextColor="White"/>
+
+                     </Frame>
+                     <Label Text="Category:" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" FontFamily="LilitaOne" TextColor="#726B60"/>
+                     <Frame CornerRadius="20" HasShadow="False" BackgroundColor="#726B60" HeightRequest="70" Padding="15">
+                         <Grid  ColumnDefinitions="23,90,23,60,23,70"  RowDefinitions="20,20,20">
+                              <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Bills" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White"/>
+                              <CheckBox x:Name="bills" Grid.Row="0" Grid.Column="0" Color="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                              <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Groceries" Grid.Row="0" Grid.Column="3" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White"/>
+                              <CheckBox x:Name="groceries" Grid.Row="0" Grid.Column="2" Color="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                              <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Restaurant" Grid.Row="0" Grid.Column="5" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White"/>
+                              <CheckBox x:Name="restaurant" Grid.Row="0" Grid.Column="4" Color="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+
+                                        <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Clothes" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White"/>
+                              <CheckBox HorizontalOptions="Start" x:Name="clothes" Grid.Row="1" Grid.Column="0" Color="White" VerticalOptions="Center"/>
+
+                              <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Health" Grid.Row="1" Grid.Column="3" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White"/>
+                              <CheckBox HorizontalOptions="Start" x:Name="health" Grid.Row="1" Grid.Column="2" Color="White" VerticalOptions="Center"/>
+
+                              <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="School" Grid.Row="1" Grid.Column="5" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White"/>
+                              <CheckBox x:Name="school" Grid.Row="1" Grid.Column="4" Color="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+
+                                <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Entertainment" Grid.Row="2" Grid.Column="1" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White" />
+                              <CheckBox x:Name="entertainment" Grid.Row="2" Grid.Column="0" Color="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                              <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Other" Grid.Row="2" Grid.Column="3" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White"/>
+                              <CheckBox x:Name="other" Grid.Row="2" Grid.Column="2" Color="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                              <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Transport" Grid.Row="2" Grid.Column="5" FontAttributes="Bold" FontFamily="LilitaOne" FontSize="14" TextColor="White"/>
+                              <CheckBox x:Name="transport" Grid.Row="2" Grid.Column="4" Color="White" HorizontalOptions="Start" VerticalOptions="Center"/>
+                         </Grid>
+                     </Frame>
+                     <Grid ColumnDefinitions="*,*" RowDefinitions="30">
+                    <Label  Text="Amount:" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" FontFamily="LilitaOne" TextColor="#726B60"/>
+                 <Grid Grid.Column="1" ColumnDefinitions="*,60" Margin="0,0,20,0" ColumnSpacing="0">
+                    <Label Grid.Column="0" Text="Date:" HorizontalOptions="End" FontSize="20" FontAttributes="Bold" FontFamily="LilitaOne" TextColor="#726B60"/>
+                    <CheckBox Grid.Column="1" x:Name="dateCheckBox" HorizontalOptions="End" Color="#726B60"/>
+                         </Grid>
+                    <Frame Grid.Row="1" CornerRadius="20" HasShadow="False" BackgroundColor="#726B60" HeightRequest="80">
+                        <Grid ColumnDefinitions="40,*" RowDefinitions="39,39">
+                            <Label FontSize="14" Text="From:" TextColor="White" FontFamily="LilitaOne"/>
+                             <Entry Keyboard="Numeric" FontSize="14" Grid.Column="1" x:Name="amountFrom" BackgroundColor="#CDC7BC" FontAttributes="Bold" FontFamily="LilitaOne" TextColor="White"/>
+                              <Label FontSize="14" Grid.Row="1"  Text="To:" TextColor="White" FontFamily="LilitaOne"/>
+                             <Entry Keyboard="Numeric" FontSize="14" Grid.Row="1" Grid.Column="1" x:Name="amountTo" BackgroundColor="#CDC7BC" FontAttributes="Bold" FontFamily="LilitaOne" TextColor="White"/>
+                        </Grid>
+                     </Frame>
+                            <Frame Grid.Row="1" Grid.Column="1" CornerRadius="20" HasShadow="False" BackgroundColor="#726B60" HeightRequest="80">
+                        <Grid ColumnDefinitions="40,*" RowDefinitions="39,39">
+                            <Label FontSize="14" Text="From:" TextColor="White" FontFamily="LilitaOne"/>
+                             <DatePicker Margin="0" Grid.Column="1" x:Name="dateFrom" BackgroundColor="#CDC7BC" FontAttributes="Bold" FontSize="14" FontFamily="LilitaOne" TextColor="White"/>
+                              <Label FontSize="14" Grid.Row="1" Text="To:" TextColor="White" FontFamily="LilitaOne"/>
+                             <DatePicker Grid.Row="1" Grid.Column="1" x:Name="dateTo" BackgroundColor="#CDC7BC" FontSize="14" FontAttributes="Bold" FontFamily="LilitaOne" TextColor="White"/>
+                        </Grid>
+                     </Frame>
+                     </Grid>
+                    
+                 </StackLayout>
+
+                 <Button Margin="50,20" WidthRequest="100" HeightRequest="60" VerticalOptions="End"
+                HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
+                TextColor="White" FontSize="20" FontFamily="LilitaOne" FontAttributes="Bold" Text="SHOW"
+                    Clicked="ShowButton_Clicked"
+                />
+
+                 </Grid>
+    </ContentPage.Content>
+</ContentPage>
