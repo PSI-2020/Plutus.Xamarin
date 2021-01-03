@@ -35,6 +35,14 @@ namespace Plutus
         public async Task DeleteBudgetAsync(int index) => await _httpClient.DeleteAsync(_path + "/api/Budgets/" + index);
         public async Task DeleteScheduledPaymentAsync(int index, string type) => await _httpClient.DeleteAsync(_path + "/api/Scheduler/" + index + "/" + type);
 
+        public async Task PostPaymentAsync(Payment payment, string type)
+        {
+            var json = JsonConvert.SerializeObject(payment);
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            await _httpClient.PostAsync(_path + "/api/Payment/" + type, httpContent);
+        }
+
         public async Task EditPaymentAsync(Payment payment, int index, DataType type)
         {
             var json = JsonConvert.SerializeObject(payment);

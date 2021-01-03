@@ -4,7 +4,9 @@
              x:Class="Plutus.Xamarin.MainPage"
              BackgroundColor="#DCD5C9">
     <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Button Margin="0,0,0,0"
+        
+        <StackLayout Spacing="0">
+            <Button Margin="0,0,0,0"
                     WidthRequest="60"
                     HeightRequest="60"
                     VerticalOptions="Start"
@@ -15,7 +17,91 @@
                     FontSize="60"
                     Text="≡"
                     Clicked="MenuButton_Clicked" />
+            <Label x:Name="goalName"
+                   TextColor="#6D665A"
+                   FontFamily="LilitaOne"
+                   FontSize="50"
+                   HorizontalOptions="Center">
+             </Label>
 
+            <Label x:Name="goalAmountAndDueDate"
+                   TextColor="#A39C90"
+                   FontFamily="LilitaOne"
+                   FontSize="16"
+                   HorizontalOptions="Center">
+             </Label>
+
+              <Label Text="You can spend today:"
+                   TextColor="#6D665A"
+                   FontFamily="LilitaOne"
+                   FontSize="25"
+                    Margin="0,20,0,0"
+                   HorizontalOptions="Center"/>
+
+            <Frame HasShadow="False" BackgroundColor="#6D665A" Margin="80,10,80,0" HeightRequest="50">
+            <Label x:Name="spendTodayLabel"
+                   Text=""
+                   TextColor="White"
+                   FontFamily="LilitaOne"
+                   FontSize="38"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            </Frame>
+
+            <Label Text="ADD:"
+                   Margin="0,150,0,0"
+                   FontFamily="LilitaOne"
+                   TextColor="#8B8478"
+                   FontAttributes="Bold"
+                   FontSize="40"
+                   HorizontalOptions="Center"/>
+
+                     <FlexLayout Margin="80,15,80,3"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Button HeightRequest="90"
+                            WidthRequest="120"
+                            BackgroundColor="#A3A09A"
+                            TextColor="#BE4343"
+                            FontFamily="LilitaOne"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            Padding="0"
+                            Text="-"
+                            FontSize="50"
+                            CornerRadius="23"
+                            Clicked="AddExpense_Clicked"/>
+                    <Label Text="expense"
+                           FontAttributes="Bold"
+                           TextColor="#8B8478"
+                           FontFamily="LilitaOne"
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+                <Label WidthRequest="50"/>
+                <StackLayout>
+                    <Button HeightRequest="90"
+                            WidthRequest="120"
+                            BackgroundColor="#A3A09A"
+                            TextColor="#87C127"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            FontFamily="LilitaOne"
+                            FontSize="50"
+                            Padding="0"
+                            CornerRadius="23"
+                            Text="+"
+                            Clicked="AddIncome_Clicked"/>
+
+                    <Label TextColor="#8B8478"
+                           FontFamily="LilitaOne"
+                           FontAttributes="Bold"
+                           Text="income"
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+            </FlexLayout>
+
+            </StackLayout>
 
     </AbsoluteLayout>
 
