@@ -48,13 +48,13 @@ namespace Plutus.Xamarin
         }
         private async void AddScheduledPayment_Clicked(object sender, EventArgs e)
         {
-            var verificationService = new VerificationService(); //pakeisti
+            var verificationService = new VerificationService();
             var error = verificationService.VerifyData(name: paymentName.Text, amount: paymentAmount.Text);
             if (error == "")
             {
                 var list = await _plutusApiClient.GetAllScheduledPaymentsAsync(_type);
                 await _plutusApiClient.PostScheduledPaymentAsync(new ScheduledPayment(paymentFirstPay.Date, paymentName.Text, double.Parse(paymentAmount.Text),
-                paymentCategory.SelectedItem.ToString(), _type + list.Count, paymentFrequency.SelectedItem.ToString(), true), _type);
+                paymentCategory.SelectedItem.ToString(), paymentFrequency.SelectedItem.ToString(), true), _type);
                 await Application.Current.MainPage.Navigation.PopAsync();
             }
             else

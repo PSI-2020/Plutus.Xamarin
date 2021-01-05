@@ -9,7 +9,6 @@ namespace Plutus
         public GoalService GoalService { get; set; }
         public HistoryService HistoryService { get; set; }
         public PaymentService PaymentService { get; set; }
-        public SchedulerService SchedulerService { get; set; }
         public ShoppingService ShoppingService { get; set; }
         public StatisticsService StatisticsService { get; set; }
         public VerificationService VerificationService { get; set; }
@@ -23,7 +22,6 @@ namespace Plutus
             GoalService = new GoalService(FileManager);
             HistoryService = new HistoryService(FileManager);
             PaymentService = new PaymentService(FileManager);
-            SchedulerService = new SchedulerService(FileManager);
             ShoppingService = new ShoppingService();
             StatisticsService = new StatisticsService(FileManager);
             VerificationService = new VerificationService();

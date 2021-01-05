@@ -101,8 +101,9 @@ namespace Plutus.Xamarin
                 };
                 editButton.Clicked += (s, e) =>
                 {
-                    var index = payments.IndexOf(item);
-                    var editScheduledPaymentPage = new EditScheduledPaymentPage(index,type,payments,_plutusApiClient);
+                   // var index = item.Id;
+
+                    var editScheduledPaymentPage = new EditScheduledPaymentPage(item,type,payments,_plutusApiClient);
                     NavigationPage.SetHasNavigationBar(editScheduledPaymentPage, false);
                     Navigation.PushAsync(editScheduledPaymentPage);
                 };
@@ -124,7 +125,7 @@ namespace Plutus.Xamarin
                 };
                 deleteButton.Clicked += async (s, e) =>
                 {
-                   var index = payments.IndexOf(item);
+                   var index = item.Id;
                    await _plutusApiClient.DeleteScheduledPaymentAsync(index, type);
                    LoadScheduledPaymentsAsync();
                 };

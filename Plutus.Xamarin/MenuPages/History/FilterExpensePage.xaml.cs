@@ -12,7 +12,7 @@ namespace Plutus.Xamarin
         private readonly PlutusApiClient _plutusApiClient;
         private readonly int _index;
         private List<History> _list;
-        private List<History> _filteredList = new List<History>();
+        private readonly List<History> _filteredList = new List<History>();
         private readonly HistoryPage _historyPage;
         public FilterExpensePage(PlutusApiClient plutusApi, int index, HistoryPage historyPage)
         {

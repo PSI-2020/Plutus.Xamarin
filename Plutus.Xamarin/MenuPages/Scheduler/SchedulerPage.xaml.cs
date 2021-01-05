@@ -98,7 +98,7 @@ namespace Plutus.Xamarin
                 };
                 switchButton.Toggled += async (s, e) =>
                 {
-                    var index = payments.IndexOf(item);
+                    var index = item.Id;
                     await _plutusApiClient.ChangeScheduledPaymentStatusAsync(index, type, switchButton.IsToggled);
                 };
 

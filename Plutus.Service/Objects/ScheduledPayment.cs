@@ -9,19 +9,18 @@ namespace Plutus
         public string Name { get; set; }
         public double Amount { get; set; }
         public string Category { get; set; }
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Frequency { get; set; }
         public bool Active { get; set; }
 
         public ScheduledPayment() { }
 
-        public ScheduledPayment(DateTime date, string name, double amount, string category, string id, string frequency, bool status)
+        public ScheduledPayment(DateTime date, string name, double amount, string category, string frequency, bool status)
         {
             Date = (int)date.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
             Name = name;
             Amount = amount;
             Category = category;
-            Id = id;
             Frequency = frequency;
             Active = status;
         }
@@ -43,7 +42,6 @@ namespace Plutus
             Name = (string)info.GetValue("Name", typeof(string));
             Amount = (double)info.GetValue("Amount", typeof(double));
             Category = (string)info.GetValue("Category", typeof(string));
-            Id = (string)info.GetValue("Id", typeof(string));
             Frequency = (string)info.GetValue("Frequency", typeof(string));
             Active = (bool)info.GetValue("Status", typeof(bool));
         }

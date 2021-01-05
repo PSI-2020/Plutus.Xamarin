@@ -8,11 +8,12 @@ namespace Plutus.Xamarin
     {
         private readonly PlutusApiClient _plutusApiClient;
         private readonly int _index;
+        private readonly ScheduledPayment _payment;
         private readonly string _type;
         private readonly List<ScheduledPayment> _list;
-        public EditScheduledPaymentPage(int index, string type, List<ScheduledPayment> list, PlutusApiClient plutusApi)
+        public EditScheduledPaymentPage(ScheduledPayment payment, string type, List<ScheduledPayment> list, PlutusApiClient plutusApi)
         {
-            _index = index;
+            _payment = payment;
             _type = type;
             _list = list;
             _plutusApiClient = plutusApi;
@@ -23,10 +24,10 @@ namespace Plutus.Xamarin
         private void LoadContent()
         {
             newPaymentCategory.Items.Clear();
-            newPaymentName.Text = _list[_index].Name;
-            newPaymentAmount.Text = _list[_index].Amount.ToString();
-            newPaymentDay.Date = _list[_index].Date.ConvertToDate();
-            newPaymentFrequency.SelectedItem = _list[_index].Frequency;
+            newPaymentName.Text = _payment.Name;
+            newPaymentAmount.Text = _payment.Amount.ToString();
+            newPaymentDay.Date = _payment.Date.ConvertToDate();
+            newPaymentFrequency.SelectedItem = _payment.Frequency;
 
             if (_type == "MonthlyIncome")
             {
@@ -50,7 +51,7 @@ namespace Plutus.Xamarin
                 newPaymentCategory.Items.Add("Other");
             }
 
-            newPaymentCategory.SelectedItem = _list[_index].Category;
+            newPaymentCategory.SelectedItem = _payment.Category;
         }
 
         private void ExitButton_Clicked(object sender, EventArgs e)
@@ -66,7 +67,7 @@ namespace Plutus.Xamarin
             {
                 var list = await _plutusApiClient.GetAllScheduledPaymentsAsync(_type);
                 await _plutusApiClient.ChangeScheduledPaymentAsync(new ScheduledPayment(newPaymentDay.Date, newPaymentName.Text, double.Parse(newPaymentAmount.Text),
-                newPaymentCategory.SelectedItem.ToString(), _type + list.Count, newPaymentFrequency.SelectedItem.ToString(), _list[_index].Active), _index, _type);
+                newPaymentCategory.SelectedItem.ToString(), newPaymentFrequency.SelectedItem.ToString(), _payment.Active), _payment.Id, _type);
                 this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
                 await Application.Current.MainPage.Navigation.PopAsync();
             }
@@ -78,7 +79,7 @@ namespace Plutus.Xamarin
         }
         private async void DeleteButton_Clicked(object sender, EventArgs e)
         {
-            await _plutusApiClient.DeleteScheduledPaymentAsync(_index, _type);
+            await _plutusApiClient.DeleteScheduledPaymentAsync(_payment.Id, _type);
             this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
             await Application.Current.MainPage.Navigation.PopAsync();
 
