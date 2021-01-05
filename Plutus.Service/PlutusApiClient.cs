@@ -138,9 +138,10 @@ namespace Plutus
             await _httpClient.PutAsync(_path + "/api/Goals/edit/" + id, httpContent);
         }
 
-        public async Task SetAsMainGoalAsync(Goal goal)
+        //public async Task SetAsMainGoalAsync(Goal goal)
+        public async Task SetAsMainGoalAsync(int id)
         {
-            var json = JsonConvert.SerializeObject(goal);
+            var json = JsonConvert.SerializeObject(id);
             var httpContent = new StringContent(json);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
             await _httpClient.PutAsync(_path + "/api/Goals/", httpContent);

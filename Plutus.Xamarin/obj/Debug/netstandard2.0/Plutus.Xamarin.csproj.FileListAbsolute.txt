@@ -120,3 +120,16 @@ C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\P
 C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\ref\Plutus.Xamarin.dll
 C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\Plutus.Xamarin.pdb
 C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\Scheduler\EditSchedulerPage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\AddPaymentPage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\Budgets\ShowDetailsBudget.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\Carts\AddCartExpensePage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\Carts\addCartPage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\Carts\EditCartExpensePage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\Carts\RenameCartPage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\Carts\ShoppingPage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\Carts\SingleCartPage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\History\EditHistoryPage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\History\EditPaymentPage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\History\FilterExpensePage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\History\FilterIncomePage.xaml.g.cs
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Xamarin\obj\Debug\netstandard2.0\MenuPages\History\FilterPaymentPage.xaml.g.cs

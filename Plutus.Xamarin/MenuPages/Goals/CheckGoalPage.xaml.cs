@@ -18,13 +18,14 @@ namespace Plutus.Xamarin
         public async void LoadContentAsync()
         {
             var list = await _plutusApiClient.GetGoalsAsync();
-            var id = 0;
-            foreach (var i in list)
-            {
-                if (_goal.Name == i.Name && _goal.Amount == i.Amount && _goal.DueDate == i.DueDate)
-                    break;
-                id++;
-            }
+            /* var id = 0;
+             foreach (var i in list)
+             {
+                 if (_goal.Name == i.Name && _goal.Amount == i.Amount && _goal.DueDate == i.DueDate)
+                     break;
+                 id++;
+             }*/
+            var id = _goal.Id;
             goalNameLabel.Text = _goal.Name;
             goalAmountLabel.Text = _goal.Amount.ToString("C2");
             goalDueDateLabel.Text = _goal.DueDate.ToShortDateString();
@@ -35,7 +36,7 @@ namespace Plutus.Xamarin
 
         private async void SetMainGoal_Clicked(object sender, EventArgs e)
         {
-            await _plutusApiClient.SetAsMainGoalAsync(_goal);
+            await _plutusApiClient.SetAsMainGoalAsync(_goal.Id);
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 

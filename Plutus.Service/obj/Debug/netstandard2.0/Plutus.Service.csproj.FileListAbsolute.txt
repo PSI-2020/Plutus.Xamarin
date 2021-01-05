@@ -6,3 +6,4 @@ C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\P
 C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.csproj.CoreCompileInputs.cache
 C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.dll
 C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.pdb
+C:\Users\Simona\Desktop\Plutus.Xamarin\Plutus.Service\obj\Debug\netstandard2.0\Plutus.Service.csprojAssemblyReference.cache

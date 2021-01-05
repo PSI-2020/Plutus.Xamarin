@@ -31,7 +31,7 @@ namespace Plutus.Xamarin
            return;
 
         }
-        goalName.Text = "GOAL: " + list[0].Name;
+        goalName.Text = "GOAL: " + list[list.Count-1].Name;
         goalAmountAndDueDate.Text = "save " + list[0].Amount.ToString("C2") + " until " + list[0].DueDate.ToString("yyyy-MM-dd");
         spendTodayLabel.Text = await _plutusApiClient.GetGoalInsightsAsync(0, "daily");
     }

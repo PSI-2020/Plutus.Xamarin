@@ -30,7 +30,8 @@ namespace Plutus.Xamarin
             var error = verificationService.VerifyData(name: newGoalName.Text, amount: newGoalAmount.Text);
             if (error == "")
             {
-                var id = await GetId(_goal);
+                //var id = await GetId(_goal);
+                int id = _goal.Id;
                 var newGoal = new Goal(newGoalName.Text, double.Parse(newGoalAmount.Text), newGoalDueDate.Date);
                 await _plutusApiClient.EditGoalAsync(id, newGoal);
                 await DisplayAlert("Success!", "Goal changed succesfully", "OK");
@@ -56,7 +57,8 @@ namespace Plutus.Xamarin
         }
         private async void DeleteGoal_Clicked(object sender, EventArgs e)
         {
-            var id = await GetId(_goal);
+            //var id = await GetId(_goal);
+            int id = _goal.Id;
             await _plutusApiClient.DeleteGoalAsync(id);
             this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
             await Application.Current.MainPage.Navigation.PopAsync();

@@ -28,16 +28,14 @@ namespace Plutus.Xamarin
 
             var goals = await _plutusApiClient.GetGoalsAsync();
 
-            var i = 0;
-            foreach (var item in goals)
+            for(var i = goals.Count-1; i>=0; i--)
             {
-                var button = new GoalButton(item);
+                var button = new GoalButton(goals[i]);
                 button.Clicked += new EventHandler(GoalButton_Clicked);
-                if (i == 0)
+                if (goals.Count - 1 == i)
                 {
                     button.BackgroundColor = Color.FromHex("726B60");
                 }
-                i++;
                 goalsStack.Children.Add(button);
             }
 

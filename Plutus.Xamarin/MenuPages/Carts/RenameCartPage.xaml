@@ -45,6 +45,7 @@
                     FontFamily="LilitaOne"
                     VerticalOptions="Start"
                     Margin="20,15"
+                    Padding="0"
                     BackgroundColor="#DCD5C9"
                     BorderColor="#C7C1B5"
                     TextColor="#726B60"
