@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -25,9 +26,9 @@ namespace Plutus
         }
 
         public void NewCart() => _currentCart = new Cart();
-        public void AddExpenseToCart(CurrentInfoHolder cih)
+        public void AddExpenseToCart(string name, double amout, string category)
         {
-            var expense = new CartExpense(cih.CurrentName, double.Parse(cih.CurrentAmout), cih.CurrentCategory);
+            var expense = new CartExpense(name, amout, category, true);
             _currentCart.AddExpense(expense);
         }
 
@@ -43,6 +44,7 @@ namespace Plutus
             _carts.Add(_currentCart);
             SaveCarts();
         }
+        public void ChangeState(int i) => _currentCart.ChangeState(i);
 
         public string GiveCurrentName() => _currentCart.GiveName();
         public int GiveCartCount() => _carts.Count;
@@ -70,7 +72,7 @@ namespace Plutus
             for (var i = 0; i < _currentCart.GiveElementC(); i++)
             {
                 var expense = _currentCart.GiveExpense(i);
-                ps.AddCartPayment(expense.Name, expense.Price, expense.Category);
+                if(expense.State) ps.AddCartPayment(expense.Name, expense.Price, (ExpenseCategories)Enum.Parse(typeof(ExpenseCategories), expense.Category));
             }
         }
         private void SaveCarts()
@@ -87,7 +89,7 @@ namespace Plutus
                         new XElement("Name", expense.Name),
                         new XElement("Amount", expense.Price),
                         new XElement("Category", expense.Category),
-                        new XElement("Activity", expense.Active));
+                        new XElement("Activity", expense.State));
 
                     expenseXml.Add(expenseX);
                 }
@@ -119,7 +121,8 @@ namespace Plutus
                     var cartExpense = new CartExpense(
                         (string)expense.Element("Name"),
                         (double)expense.Element("Amount"),
-                        (string)expense.Element("Category")
+                        (string)expense.Element("Category"),
+                        (bool)expense.Element("Active")
                         );
                      specificCart.AddExpense(cartExpense);
                 }

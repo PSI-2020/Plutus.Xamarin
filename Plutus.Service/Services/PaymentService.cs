@@ -21,7 +21,7 @@ namespace Plutus
             _fm.AddPayment(payment, chi.CurrentType);
         }
 
-        public void AddCartPayment(string name, double amount, string category)
+        public void AddCartPayment(string name, double amount, ExpenseCategories category)
         {
             var date = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             var payment = new Payment
@@ -29,7 +29,7 @@ namespace Plutus
                 Date = date,
                 Name = name,
                 Amount = amount,
-                Category = category
+                Category = category.ToString()
             };
             _fm.AddPayment(payment, "Expense");
         }

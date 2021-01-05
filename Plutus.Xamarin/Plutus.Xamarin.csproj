@@ -34,7 +34,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="MenuPages\Carts\EditCartExpensePage.xaml.cs">
+      <DependentUpon>EditCartExpensePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MenuPages\Carts\RenameCartPage.xaml.cs">
+      <DependentUpon>RenameCartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MenuPages\Carts\ShoppingPage.xaml.cs">
+      <DependentUpon>ShoppingPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="MenuPages\Budgets\AddBudgetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MenuPages\Carts\AddCartExpensePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MenuPages\Carts\addCartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MenuPages\Carts\CartsPage.xaml">

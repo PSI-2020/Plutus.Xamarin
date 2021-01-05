@@ -1,7 +1,9 @@
 ﻿
+using Plutus.Interfaces;
+
 namespace Plutus
 {
-    public class CurrentInfoHolder
+    public class CurrentInfoHolder : IInfoHolder
     {
         public string CurrentType { get; set; }
         public string CurrentCategory { get; set; }

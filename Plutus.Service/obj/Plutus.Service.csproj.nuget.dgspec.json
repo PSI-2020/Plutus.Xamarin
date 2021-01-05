@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {}
+    "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {
+    "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
+        "projectUniqueName": "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
         "projectName": "Plutus.Service",
-        "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
-        "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Service\\obj\\",
+        "projectPath": "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Service\\Plutus.Service.csproj",
+        "packagesPath": "C:\\Users\\eglek\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simona\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eglek\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

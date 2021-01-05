@@ -47,6 +47,7 @@ Xamarin.Essentials
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Google.Android.Material
+Xamarin.Google.Guava.ListenableFuture
 androidx.versionedparcelable.versionedparcelable
 androidx.lifecycle.lifecycle-runtime
 androidx.core.core
@@ -83,4 +84,3 @@ androidx.media.media
 androidx.lifecycle.lifecycle-livedata
 androidx.legacy.legacy-support-v4
 androidx.browser.browser
-Xamarin.Google.Guava.ListenableFuture

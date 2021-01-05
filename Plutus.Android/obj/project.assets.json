@@ -2521,24 +2521,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Simona\\.nuget\\packages\\": {},
+    "C:\\Users\\eglek\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Android\\Plutus.Android.csproj",
+      "projectUniqueName": "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Android\\Plutus.Android.csproj",
       "projectName": "Plutus.Android",
-      "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Android\\Plutus.Android.csproj",
-      "packagesPath": "C:\\Users\\Simona\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Android\\obj\\",
+      "projectPath": "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Android\\Plutus.Android.csproj",
+      "packagesPath": "C:\\Users\\eglek\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Simona\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eglek\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2552,8 +2552,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {
-              "projectPath": "C:\\Users\\Simona\\Desktop\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj"
+            "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj": {
+              "projectPath": "C:\\Users\\eglek\\OneDrive\\Documents\\GitHub\\Plutus.Xamarin\\Plutus.Xamarin\\Plutus.Xamarin.csproj"
             }
           }
         }

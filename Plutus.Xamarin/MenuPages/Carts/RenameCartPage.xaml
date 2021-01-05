@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.RenameCartPage"
+             BackgroundColor="#DCD5C9">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Padding="0,50,0,0">
+
+                <Frame HasShadow="False" BackgroundColor="#726B60">
+                    <Label
+                   Text="RENAME CART"
+                   FontSize="30"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill"/>
+                </Frame>
+                <StackLayout Margin="40,20">
+                    <Label
+                   Text="Name:"
+                   FontSize="30"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   HorizontalOptions="Start"/>
+                    <Entry
+                x:Name="newCartName"
+                TextColor="#726B60"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                HeightRequest="55"
+                BackgroundColor="#C7C1B5"
+                   />
+                </StackLayout>
+            </StackLayout>
+            <Button Text="back"
+                    HeightRequest="25"
+                    HorizontalOptions="End"
+                    WidthRequest="40"
+                    FontSize="13"
+                    FontFamily="LilitaOne"
+                    VerticalOptions="Start"
+                    Margin="20,15"
+                    BackgroundColor="#DCD5C9"
+                    BorderColor="#C7C1B5"
+                    TextColor="#726B60"
+                    Clicked="ExitButton_Clicked"/>
+            <Button Margin="50" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
+                HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
+                TextColor="White" FontFamily="LilitaOne" FontSize="25" FontAttributes="Bold" Text="Rename" 
+                Clicked="AddCart_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

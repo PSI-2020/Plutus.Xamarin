@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.AddCartExpensePage"
+             BackgroundColor="#DCD5C9">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Padding="40,70,40,0">
+                <Frame HasShadow="False" BackgroundColor="#726B60">
+                    <Label
+                   Text="ADD EXPENSE"
+                   FontSize="30"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill"/>
+                </Frame>
+
+                <StackLayout>
+                    <Label
+                   Padding="0,30,0,0"
+                   Text="Name:"
+                   FontFamily="LilitaOne"
+                   FontSize="25"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   />
+                    <Entry
+                x:Name="expenseName"
+                TextColor="#A19C92"
+                FontSize="25"
+                FontAttributes="Bold"
+                FontFamily="LilitaOne"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5"/>
+
+                    <Label
+                   Padding="0,10,0,0"
+                   Text="Amount:"
+                   FontSize="25"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   />
+                    <Entry
+                x:Name="expenseAmount"
+                TextColor="#A19C92"
+                Keyboard="Numeric"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5"/>
+                    <Label
+                   Padding="0,10,0,0"
+                   Text="Category:"
+                   FontSize="25"
+                   FontFamily="LilitaOne"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   />
+                    <Picker
+                x:Name="expenseCategory"
+                TextColor="#A19C92"
+                FontSize="25"
+                FontFamily="LilitaOne"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                BackgroundColor="#C7C1B5">
+                    </Picker>
+
+
+
+                </StackLayout>
+
+            </StackLayout>
+            <Button Margin="50,40" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
+                HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
+                TextColor="White" FontSize="25" FontFamily="LilitaOne" FontAttributes="Bold" Text="ADD"
+                    Clicked="AddExpense_Clicked"
+                />
+            <Button Text="&lt;"
+                Padding="0"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    WidthRequest="20"
+                    FontSize="25"
+                    FontFamily="LilitaOne"
+                    VerticalOptions="Start"
+                    Margin="20,15"
+                    BackgroundColor="#DCD5C9"
+                    BorderColor="#C7C1B5"
+                    TextColor="#726B60"
+                    Clicked="ExitButton_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

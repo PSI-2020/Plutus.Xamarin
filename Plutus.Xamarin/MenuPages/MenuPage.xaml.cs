@@ -22,21 +22,21 @@ namespace Plutus.Xamarin
             InitializeComponent();
 
             _historyPage = new HistoryPage(_plutusApiClient);
-            NavigationPage.SetHasNavigationBar(_historyPage, false);
+             NavigationPage.SetHasNavigationBar(_historyPage, false);
 
-            _insightsPage = new InsightsPage(_plutusApiClient);
-            NavigationPage.SetHasNavigationBar(_insightsPage, false);
+             _insightsPage = new InsightsPage(_plutusApiClient);
+             NavigationPage.SetHasNavigationBar(_insightsPage, false);
 
-            _schedulerPage = new SchedulerPage(_menuPage, _plutusApiClient);
-            NavigationPage.SetHasNavigationBar(_schedulerPage, false);
+             _schedulerPage = new SchedulerPage(_menuPage, _plutusApiClient);
+             NavigationPage.SetHasNavigationBar(_schedulerPage, false);
 
-            _goalsPage = new GoalsPage(_plutusApiClient);
-            NavigationPage.SetHasNavigationBar(_goalsPage, false);
+             _goalsPage = new GoalsPage(_plutusApiClient);
+             NavigationPage.SetHasNavigationBar(_goalsPage, false);
 
-            _budgetsPage = new BudgetsPage(_plutusApiClient);
-            NavigationPage.SetHasNavigationBar(_budgetsPage, false);
+             _budgetsPage = new BudgetsPage(_plutusApiClient);
+             NavigationPage.SetHasNavigationBar(_budgetsPage, false);
 
-            _cartsPage = new CartsPage(_menuPage, _plutusApiClient);
+            _cartsPage = new CartsPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(_cartsPage, false);
         }
 
