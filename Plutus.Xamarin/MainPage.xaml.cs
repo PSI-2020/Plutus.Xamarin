@@ -32,8 +32,8 @@ namespace Plutus.Xamarin
 
         }
         goalName.Text = "GOAL: " + list[list.Count-1].Name;
-        goalAmountAndDueDate.Text = "save " + list[0].Amount.ToString("C2") + " until " + list[0].DueDate.ToString("yyyy-MM-dd");
-        spendTodayLabel.Text = await _plutusApiClient.GetGoalInsightsAsync(0, "daily");
+        goalAmountAndDueDate.Text = "save " + list[list.Count - 1].Amount.ToString("C2") + " until " + list[list.Count - 1].DueDate.ToString("yyyy-MM-dd");
+        spendTodayLabel.Text = await _plutusApiClient.GetGoalInsightsAsync(list[list.Count - 1].Id, "daily");
     }
 
     private void MenuButton_Clicked(object sender, EventArgs e)
