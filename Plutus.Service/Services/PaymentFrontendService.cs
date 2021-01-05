@@ -1,13 +1,17 @@
-﻿using System;
+﻿using Plutus.Interfaces;
+using System;
+using System.Threading.Tasks;
 
 namespace Plutus
 {
-    public class PaymentService
+    public class PaymentFrontendService : IPaymentFrontEndService
     {
-        private readonly FileManager _fm;
+        private readonly PlutusApiClient _plutusApiClient;
 
-        public PaymentService(FileManager fm) => _fm = fm;
-        public void AddPayment(CurrentInfoHolder chi)
+        public PaymentFrontendService(PlutusApiClient plutusApi) => _plutusApiClient = plutusApi;
+
+
+        public async Task AddPaymentAsync(IInfoHolder chi)
         {
             var date = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
@@ -18,10 +22,11 @@ namespace Plutus
                 Amount = double.Parse(chi.CurrentAmout),
                 Category = chi.CurrentCategory
             };
-            _fm.AddPayment(payment, chi.CurrentType);
+
+            await _plutusApiClient.PostPaymentAsync(payment, chi.CurrentType);
         }
 
-        public void AddCartPayment(string name, double amount, ExpenseCategories category)
+        public async void AddCartPaymentAsync(string name, double amount, string category)
         {
             var date = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             var payment = new Payment
@@ -29,9 +34,9 @@ namespace Plutus
                 Date = date,
                 Name = name,
                 Amount = amount,
-                Category = category.ToString()
+                Category = category
             };
-            _fm.AddPayment(payment, "Expense");
+            await _plutusApiClient.PostPaymentAsync(payment, "Expense"); ;
         }
     }
 }

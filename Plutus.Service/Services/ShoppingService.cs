@@ -28,7 +28,7 @@ namespace Plutus
             {
                 if (_shoppingBag[i].State == 1)
                 {
-                    ps.AddCartPayment(_shoppingBag[i].Name, _shoppingBag[i].Price, _shoppingBag[i].Category);
+                    ps.AddCartPayment(_shoppingBag[i].Name, _shoppingBag[i].Price, (ExpenseCategories)Enum.Parse(typeof(ExpenseCategories), _shoppingBag[i].Category));
                 }
             }
         }

@@ -1,12 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Plutus.Xamarin.CartsPage">
+             x:Class="Plutus.Xamarin.CartsPage"
+             BackgroundColor="#DCD5C9">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Carts Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Button Margin="0,0,0,0"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent"
+                    TextColor="#B8AF9D"
+                    Padding="0"
+                    FontSize="60"
+                    Text="≡"
+                    Clicked="MenuButton_Clicked" />
+
+            <Button Margin="0,3,0,0"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    VerticalOptions="Start"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    CornerRadius="15" 
+                    TextColor="#A3A09A"
+                    FontSize="30"
+                    Text="✕" 
+                    Clicked="ExitButton_Clicked" />
+
+            <Label Padding="0,60,0,0" Text="Carts" FontFamily="LilitaOne" FontSize="48" TextColor="#726B60" FontAttributes="Bold"
+                HorizontalOptions="Center" />
+            <Frame HasShadow="False" BorderColor="#A3A09A" BackgroundColor="#DCD5C9" Margin="40,140,40,110">
+                <ScrollView>
+                    <StackLayout x:Name="cartsStack"/>
+                </ScrollView>
+            </Frame>
+            <Button Margin="30" WidthRequest="60" HeightRequest="50" VerticalOptions="End"
+                HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
+                TextColor="#DCD5C9" FontSize="35" FontFamily="LilitaOne" Text="+" Padding="0"
+                Clicked="AddCart_Clicked" />
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

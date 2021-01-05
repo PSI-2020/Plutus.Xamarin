@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plutus.Xamarin.SingleCartPage"
+             BackgroundColor="#DCD5C9">
+    <ContentPage.Content>
+        <Grid>
+
+
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,0,10,0">
+                    <Button Margin="0,10,0,0" WidthRequest="60" HeightRequest="50"
+                            BackgroundColor="Transparent"
+                            TextColor="#726B60" FontSize="15" FontFamily="LilitaOne" Text="Back" Padding="0"
+                            Clicked="Back_ClickedAsync" VerticalOptions="Start" HorizontalOptions="Start"/>
+                    <Label x:Name="cartName"   Text="" FontFamily="LilitaOne" FontSize="48" TextColor="#726B60" FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Button Margin="0,10,0,0" WidthRequest="60" HeightRequest="50"
+                            BackgroundColor="Transparent"
+                            TextColor="#726B60" FontSize="15" FontFamily="LilitaOne" Text="Rename" Padding="0"
+                            Clicked="Rename_Clicked" VerticalOptions="Start" HorizontalOptions="End"/>
+                </StackLayout>
+
+                <Frame BackgroundColor="Transparent" Padding="1" HasShadow="False" CornerRadius="0" HeightRequest="1500">
+                    <StackLayout Spacing="0">
+                        <Grid ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86" ColumnDefinitions="25,*,*,*,*,25" RowDefinitions="30" >
+                            <Label Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Name" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Amount" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="Category" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="4" Text="State" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="5"  TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                        </Grid>
+                        <ScrollView x:Name="scroll">
+                            <Grid x:Name="cartExpenses" RowSpacing="0" ColumnSpacing="2" BackgroundColor="#8D8B86" ColumnDefinitions="25,*,*,*,*,25"/>
+                        </ScrollView>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Horizontal" VerticalOptions="End" Margin="20, 0, 20, 0">
+                    <Button Margin="2"  HeightRequest="30"
+                                        BackgroundColor="#726B60" CornerRadius="15" 
+                                        HorizontalOptions="FillAndExpand"
+                                        TextColor="#DCD5C9" FontSize="15" FontFamily="LilitaOne" Text="Add Expense" Padding="0"
+                                        Clicked="NewExpense_Clicked" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="End" Margin="20, 0, 20, 0">
+                    <Button Margin="2"  HeightRequest="30"
+                                        BackgroundColor="#726B60" CornerRadius="15" 
+                                        HorizontalOptions="FillAndExpand"
+                                        TextColor="#DCD5C9" FontSize="15" FontFamily="LilitaOne" Text="Delete" Padding="0"
+                                        Clicked="DeleteCart_ClickedAsync" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="End" Margin="20, 0, 20, 10">
+                    <Button Margin="0,0,0,5"  HeightRequest="10"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#726B60" CornerRadius="15" 
+                            TextColor="#DCD5C9" FontSize="15" FontFamily="LilitaOne" Text="Charge" Padding="0"
+                            Clicked="ChargeCart_ClickedAsync" />
+                    <Button Margin="0,0,0,5"  HeightRequest="40"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#726B60" CornerRadius="15" 
+                            TextColor="#DCD5C9" FontSize="15" FontFamily="LilitaOne" Text="Go shopping" Padding="0"
+                            Clicked="GoShopping_Clicked"
+                             />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
