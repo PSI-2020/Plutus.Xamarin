@@ -14,11 +14,13 @@
   <ItemGroup>
     <None Remove="Resources\LilitaOne.ttf" />
     <None Remove="Resources\Macondo.ttf" />
+    <None Remove="Resources\PlutusLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\LilitaOne.ttf" />
     <EmbeddedResource Include="Resources\Macondo.ttf" />
+    <EmbeddedResource Include="Resources\PlutusLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
