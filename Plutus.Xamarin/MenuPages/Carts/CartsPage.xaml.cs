@@ -1,5 +1,4 @@
-﻿using Plutus.Interfaces;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Plutus;
@@ -16,8 +15,7 @@ namespace Plutus.Xamarin
     public partial class CartsPage : ContentPage
     {
         private readonly PlutusApiClient _plutusApiClient;
-        private readonly CartFrontendService _cartService; 
-        //private readonly CartService _cartService;
+        private readonly CartFrontendService _cartService;
 
         public CartsPage(PlutusApiClient plutusApi)
         {
@@ -69,7 +67,7 @@ namespace Plutus.Xamarin
         private void MenuButton_Clicked(object sender, EventArgs e) => Application.Current.MainPage.Navigation.PopAsync();
 
         private void ExitButton_Clicked(object sender, EventArgs e)
-        {      
+        {
             var page = new MainPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(page, false);
             Navigation.PushAsync(page);

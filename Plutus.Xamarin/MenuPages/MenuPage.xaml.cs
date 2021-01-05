@@ -36,7 +36,7 @@ namespace Plutus.Xamarin
             _budgetsPage = new BudgetsPage(_plutusApiClient);
             NavigationPage.SetHasNavigationBar(_budgetsPage, false);
 
-            _cartsPage = new CartsPage(_menuPage, _plutusApiClient);
+            _cartsPage = new CartsPage( _plutusApiClient);
             NavigationPage.SetHasNavigationBar(_cartsPage, false);
         }
 

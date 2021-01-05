@@ -8,21 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.MenuPages.Carts.CartsPage.xaml", "MenuPages/Carts/CartsPage.xaml", typeof(global::Plutus.Xamarin.CartsPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Plutus.Xamarin.MenuPages.Carts.addCartPage - Copy.xaml", "MenuPages/Carts/addCartPage - Copy.xaml", typeof(global::Plutus.Xamarin.AddCartPage))]
 
 namespace Plutus.Xamarin {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MenuPages\\Carts\\CartsPage.xaml")]
-    public partial class CartsPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MenuPages\\Carts\\addCartPage - Copy.xaml")]
+    public partial class AddCartPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.StackLayout cartsStack;
+        private global::Xamarin.Forms.Entry newCartName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(CartsPage));
-            cartsStack = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "cartsStack");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddCartPage));
+            newCartName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "newCartName");
         }
     }
 }

@@ -7,6 +7,7 @@ using Microcharts;
 using SkiaSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plutus;
 
 namespace Plutus.Xamarin
 {

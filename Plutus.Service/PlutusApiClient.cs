@@ -227,13 +227,5 @@ namespace Plutus
             return cartNames;
         }
 
-        public async Task PostPaymentAsync(Payment payment, string type)
-        {
-            var json = JsonConvert.SerializeObject(payment);
-            var httpContent = new StringContent(json);
-            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
-            await _httpClient.PostAsync(_path + "/api/Payment/" + type, httpContent);
-        }
-
     }
 }
