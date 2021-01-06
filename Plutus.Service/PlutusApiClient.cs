@@ -58,9 +58,9 @@ namespace Plutus
             await _httpClient.PutAsync(_path + "/api/Payment/" + type, httpContent);
         }
 
-        public async Task<List<History>> GetHistoryAsync(int index)
+        public async Task<List<History>> GetHistoryAsync(int index, int page, int perPage)
         {
-            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index);
+            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + page + "/" + perPage);
             var history = JsonConvert.DeserializeObject<List<History>>(response);
             return history;
         }

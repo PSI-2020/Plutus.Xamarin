@@ -58,10 +58,16 @@
              <Label Grid.Row="0" Grid.Column="4" Text="Type" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
             </Grid>
             <ScrollView x:Name="scroll">
-              <Grid x:Name="data" RowSpacing="0" ColumnSpacing="2" BackgroundColor="#8D8B86" ColumnDefinitions="*,*,*,*,45"/>
-                
+              <Grid x:Name="data" RowSpacing="0" ColumnSpacing="2" BackgroundColor="#8D8B86" ColumnDefinitions="*,*,*,*,45"/>                
             </ScrollView>
-          
+                <Grid ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86" ColumnDefinitions="30,*,*,*,30" RowDefinitions="30" >          
+                     <Button Grid.Row="0" Grid.Column="0" Text="Prev" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" BackgroundColor="#726B60"/>
+                     <Label Grid.Row="0" Grid.Column="1" Text="Page" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                     <Label x:Name="currPageLabel"  Grid.Row="0" Grid.Column="2" Text="" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                     <Label Grid.Row="0" Grid.Column="3" Text="/" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                     <Label x:Name="pageCountLabel" Grid.Row="0" Grid.Column="4" Text="" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                     <Button Grid.Row="0" Grid.Column="5" Text="Next" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" BackgroundColor="#726B60"/>
+                </Grid>          
             </StackLayout>
                 </Frame>
                 </StackLayout>

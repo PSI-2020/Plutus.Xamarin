@@ -15,10 +15,12 @@ namespace Plutus.Xamarin
         private readonly PlutusApiClient _plutusApiClient;
 
         public List<History> FilteredList { get; set; }
+        private int _currentPage;
 
         public HistoryPage(PlutusApiClient plutusApi)
         {
             _plutusApiClient = plutusApi;
+            _currentPage = 0;
             InitializeComponent();
             dataPicker.SelectedItem = "All";
             FilteredList = null;
