@@ -51,14 +51,14 @@ namespace Plutus.Xamarin
 
         private async void LoadDetailsAsync(int index)
         {
-            _pageCount = await _plutusApiClient.GetPageCount(index, _perPage);
+            _pageCount = await _plutusApiClient.GetPageCount(index, _perPage, _historyFilters);
             _pageCount++;
             PagingMenu.IsVisible = (_pageCount > 1) ? true : false;
             data.Children.Clear();
             data.RowDefinitions.Clear();
             _ = scroll.ScrollToAsync(data, ScrollToPosition.Start, false);
 
-            var list = await _plutusApiClient.GetHistoryAsync(index, CurrentPage, _perPage);
+            var list = await _plutusApiClient.GetHistoryAsync(index, CurrentPage, _perPage, _historyFilters);
             if (list != null)
             {
                 var i = 0;

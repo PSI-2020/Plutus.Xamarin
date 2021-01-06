@@ -26,7 +26,17 @@ namespace Plutus.Xamarin
             CurrentPage = 1;
             HistoryFilters = new Filters
             {
-                Used = false
+                Used = false,
+                NameFiter = false,
+                NameFiterString = "Empty",
+                IncFlag = 0,
+                ExpFlag = 0,
+                AmountFilter = 0,
+                AmountFrom = 0,
+                AmountTo = 0,
+                DateFilter = false,
+                DateFrom = 0,
+                DateTo = 0
             };
             InitializeComponent();
             dataPicker.SelectedItem = "All";
@@ -47,7 +57,7 @@ namespace Plutus.Xamarin
 
         private async void LoadDetailsAsync(int index)
         {
-            _pageCount = await _plutusApiClient.GetPageCount(index, _perPage);
+            _pageCount = await _plutusApiClient.GetPageCount(index, _perPage, HistoryFilters);
             _pageCount++;
             PagingMenu.IsVisible = (_pageCount > 1) ? true : false;
             data.Children.Clear();
@@ -57,7 +67,7 @@ namespace Plutus.Xamarin
             var list = new List<History>();
             if (FilteredList == null)
             {
-                list = await _plutusApiClient.GetHistoryAsync(index, CurrentPage, _perPage);
+                list = await _plutusApiClient.GetHistoryAsync(index, CurrentPage, _perPage, HistoryFilters);
             }
             else
             {

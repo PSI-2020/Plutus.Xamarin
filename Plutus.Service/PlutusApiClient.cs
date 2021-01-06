@@ -58,16 +58,16 @@ namespace Plutus
             await _httpClient.PutAsync(_path + "/api/Payment/" + type, httpContent);
         }
 
-        public async Task<List<History>> GetHistoryAsync(int index, int page, int perPage)
+        public async Task<List<History>> GetHistoryAsync(int index, int page, int perPage, Filters filter)
         {
-            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + page + "/" + perPage);
+            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + page + "/" + perPage + "/" + filter.Used + "/" + filter.NameFiter + "/" + filter.NameFiterString + "/" + filter.ExpFlag + "/" + filter.IncFlag + "/" + filter.AmountFilter + "/" + filter.AmountFrom + "/" + filter.AmountTo + "/" + filter.DateFilter + "/" + filter.DateFrom + "/" + filter.DateTo);
             var history = JsonConvert.DeserializeObject<List<History>>(response);
             return history;
         }
 
-        public async Task<int> GetPageCount(int index, int perPage)
+        public async Task<int> GetPageCount(int index, int perPage, Filters filter)
         {
-            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + perPage);
+            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + perPage + "/" + filter.Used + "/" + filter.NameFiter + "/" + filter.NameFiterString + "/" + filter.ExpFlag + "/" + filter.IncFlag + "/" + filter.AmountFilter + "/" + filter.AmountFrom + "/" + filter.AmountTo + "/" + filter.DateFilter + "/" + filter.DateFrom + "/" + filter.DateTo);
             var pageCount = JsonConvert.DeserializeObject<int>(response);
             return pageCount;
         }

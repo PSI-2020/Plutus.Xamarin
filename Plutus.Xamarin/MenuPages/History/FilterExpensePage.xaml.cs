@@ -9,113 +9,117 @@ namespace Plutus.Xamarin
 {
     public partial class FilterExpensePage : ContentPage
     {
-        private readonly PlutusApiClient _plutusApiClient;
-        private readonly int _index;
-        private List<History> _list;
-        private readonly List<History> _filteredList = new List<History>();
         private readonly HistoryPage _historyPage;
         public FilterExpensePage(PlutusApiClient plutusApi, int index, HistoryPage historyPage)
         {
-            _plutusApiClient = plutusApi;
-            _index = index;
             _historyPage = historyPage;
             InitializeComponent();
-            GetList();
 
         }
-        private async void GetList()
-        {
-            _list = await _plutusApiClient.GetHistoryAsync(_index, 0, int.MaxValue);
-        }
 
-        private List<History> FilterByName(List<History> list)
+        private int FilterByName()
         {
             if (name.Text == null)
-                return list;
-
-            return list.Where(x => x.Name.ToLower() == name.Text.ToLower()).ToList();
-        }
-
-        private List<History> FilterByCategory(List<History> list)
-        {
-            var selectedCategories = new List<string>();
-            var filteredList = new List<History>();
-
-            if (groceries.IsChecked)
-                selectedCategories.Add("Groceries");
-            if (bills.IsChecked)
-                selectedCategories.Add("Bills");
-            if (restaurant.IsChecked)
-                selectedCategories.Add("Restaurant");
-            if (clothes.IsChecked)
-                selectedCategories.Add("Clothes");
-            if (health.IsChecked)
-                selectedCategories.Add("Health");
-            if (school.IsChecked)
-                selectedCategories.Add("School");
-            if (entertainment.IsChecked)
-                selectedCategories.Add("Entertainment");
-            if (other.IsChecked)
-                selectedCategories.Add("Other");
-            if (transport.IsChecked)
-                selectedCategories.Add("Transport");
-
-            if (!selectedCategories.Any())
-                return list;
-
-            foreach (var payment in list)
             {
-                foreach (var category in selectedCategories)
-                {
-                    if (payment.Category == category)
-                    {
-                        filteredList.Add(payment);
-                    }
-                }
+                _historyPage.HistoryFilters.NameFiter = false;
+                _historyPage.HistoryFilters.NameFiterString = "Empty";
+                return 0;
+            }
+            _historyPage.HistoryFilters.NameFiter = true;
+            _historyPage.HistoryFilters.NameFiterString = name.Text;
+            return 1;
+        }
+        private int FilterByCategory()
+        {
+            var selectedECategories = new List<int>();
+            int change;
+            if (groceries.IsChecked)
+                selectedECategories.Add(1);
+            if (bills.IsChecked)
+                selectedECategories.Add(2);
+            if (restaurant.IsChecked)
+                selectedECategories.Add(4);
+            if (clothes.IsChecked)
+                selectedECategories.Add(8);
+            if (health.IsChecked)
+                selectedECategories.Add(16);
+            if (school.IsChecked)
+                selectedECategories.Add(32);
+            if (entertainment.IsChecked)
+                selectedECategories.Add(64);
+            if (other.IsChecked)
+                selectedECategories.Add(128);
+            if (transport.IsChecked)
+                selectedECategories.Add(256);
+
+            if (!selectedECategories.Any())
+            {
+                change = 0;
+                _historyPage.HistoryFilters.ExpFlag = 0;
+            }
+            else
+            {
+                var count = selectedECategories.Sum();
+                _historyPage.HistoryFilters.ExpFlag = count;
+                change = 1;
             }
 
-            return filteredList;
+            return change;
 
         }
 
-        private List<History> FilterByAmount(List<History> list)
+        private int FilterByAmount()
         {
 
             if (amountFrom.Text == null && amountTo.Text == null)
             {
-                return list;
+                _historyPage.HistoryFilters.AmountFilter = 0;
+                _historyPage.HistoryFilters.AmountFrom = 0;
+                _historyPage.HistoryFilters.AmountTo = 0;
+                return 0;
             }
             if (amountFrom.Text == null && amountTo.Text != null)
             {
-                return list.Where(x => x.Amount <= double.Parse(amountTo.Text)).ToList();
+                _historyPage.HistoryFilters.AmountFilter = 1;
+                _historyPage.HistoryFilters.AmountTo = double.Parse(amountTo.Text);
+                _historyPage.HistoryFilters.AmountTo = 0;
+                return 1;
             }
             if (amountFrom.Text != null && amountTo.Text == null)
             {
-                return list.Where(x => x.Amount >= double.Parse(amountFrom.Text)).ToList();
+                _historyPage.HistoryFilters.AmountFilter = 2;
+                _historyPage.HistoryFilters.AmountFrom = double.Parse(amountFrom.Text);
+                _historyPage.HistoryFilters.AmountTo = 0;
+                return 1;
             }
             if (amountFrom.Text != null && amountTo.Text != null)
             {
-                return list.Where(x => x.Amount <= double.Parse(amountTo.Text)).Where(x => x.Amount >= double.Parse(amountFrom.Text)).ToList();
+                _historyPage.HistoryFilters.AmountFilter = 3;
+                _historyPage.HistoryFilters.AmountFrom = double.Parse(amountFrom.Text);
+                _historyPage.HistoryFilters.AmountTo = double.Parse(amountTo.Text);
+                return 1;
             }
-
-            return null;
-
+            return 0;
 
         }
-        private List<History> FilterByDate(List<History> list)
+        private int FilterByDate()
         {
-            var filteredList = new List<History>();
 
             if (!dateCheckBox.IsChecked)
-                return list;
-
-            filteredList = list.Where(x => new DateTime(x.Date.Year, x.Date.Month, x.Date.Day, 0, 0, 0) <= dateTo.Date)
-                               .Where(x => new DateTime(x.Date.Year, x.Date.Month, x.Date.Day, 0, 0, 0) >= dateFrom.Date)
-                               .ToList();
-
-
-            return filteredList;
+            {
+                _historyPage.HistoryFilters.DateFilter = false;
+                _historyPage.HistoryFilters.DateFrom = 0;
+                _historyPage.HistoryFilters.DateTo = 0;
+                return 0;
+            }
+            var dateto = dateTo.Date.ConvertToInt();
+            var datefrom = dateFrom.Date.ConvertToInt();
+            _historyPage.HistoryFilters.DateFilter = true;
+            _historyPage.HistoryFilters.DateFrom = datefrom;
+            _historyPage.HistoryFilters.DateTo = dateto;
+            return 1;
         }
+
 
         private void ExitButton_Clicked(object sender, EventArgs e)
         {
@@ -123,17 +127,17 @@ namespace Plutus.Xamarin
         }
         private void ShowButton_Clicked(object sender, EventArgs e)
         {
-            var filteredList = _list;
+            var change = 0;
+            change += FilterByName();
 
-            filteredList = FilterByName(filteredList);
+            change += FilterByCategory();
 
-            filteredList = FilterByCategory(filteredList);
+            change += FilterByAmount();
 
-            filteredList = FilterByAmount(filteredList);
+            change += FilterByDate();
 
-            filteredList = FilterByDate(filteredList);
-
-            _historyPage.FilteredList = filteredList;
+            _historyPage.HistoryFilters.Used = (change == 0) ? false : true;
+            _historyPage.CurrentPage = 1;
 
             Application.Current.MainPage.Navigation.PopAsync();
         }
