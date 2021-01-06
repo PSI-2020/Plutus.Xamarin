@@ -65,6 +65,13 @@ namespace Plutus
             return history;
         }
 
+        public async Task<int> GetPageCount(int index, int perPage)
+        {
+            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + perPage);
+            var pageCount = JsonConvert.DeserializeObject<int>(response);
+            return pageCount;
+        }
+
         public async Task<List<Payment>> GetPaymentsAsync(string type)
         {
             var response = await _httpClient.GetStringAsync(_path + "/api/Payment/" + type);

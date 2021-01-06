@@ -25,7 +25,7 @@ namespace Plutus.Xamarin
         }
         private async void GetList()
         {
-            _list = await _plutusApiClient.GetHistoryAsync(_index);
+            _list = await _plutusApiClient.GetHistoryAsync(_index, 0, int.MaxValue);
         }
 
         private List<History> FilterByName(List<History> list)

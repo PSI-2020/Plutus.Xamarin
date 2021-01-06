@@ -47,7 +47,7 @@
             <Button Grid.Row="0" Grid.Column="1" VerticalOptions="Fill" Clicked="DoneButton_Clicked" Padding="0" BackgroundColor="Transparent" FontFamily="LilitaOne" FontAttributes="Bold" Text="done" TextTransform="Lowercase" TextColor="White" FontSize="10" HorizontalOptions="End"/>
             </Grid>
             
-            <Frame BackgroundColor="Transparent" Padding="1" HasShadow="False" CornerRadius="0" HeightRequest="1500">
+            <Frame BackgroundColor="Transparent" Padding="1" HasShadow="False" CornerRadius="0">
             <StackLayout Spacing="0">
             <Grid ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86" ColumnDefinitions="20,*,*,*,*,45,20" RowDefinitions="30" >
              <Label Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
@@ -65,10 +65,19 @@
           
             </StackLayout>
                 </Frame>
-                </StackLayout>
-           
 
+            </StackLayout>
+            <Grid VerticalOptions="End" Margin="0,0,0,10" x:Name="PagingMenu" ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86" ColumnDefinitions="50,50,*,20, *,50" RowDefinitions="40" >
+                <Button Grid.Row="0" Grid.Column="0" Text="&lt;" TextColor="White" FontFamily="LilitaOne" FontAttributes="Bold" BackgroundColor="#726B60" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="PrevPage_Clicked"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Page " TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                <Label x:Name="currPageLabel"  Grid.Row="0" Grid.Column="2" Text="" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                <Label Grid.Row="0" Grid.Column="3" Text="/" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                <Label x:Name="pageCountLabel" Grid.Row="0" Grid.Column="4" Text="" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                <Button Grid.Row="0" Grid.Column="5" Text="&gt;" TextColor="White" FontFamily="LilitaOne" FontAttributes="Bold" BackgroundColor="#726B60" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="NextPage_Clicked"/>
             </Grid>
+
+
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>

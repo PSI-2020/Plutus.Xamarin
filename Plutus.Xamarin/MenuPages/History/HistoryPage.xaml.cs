@@ -15,12 +15,19 @@ namespace Plutus.Xamarin
         private readonly PlutusApiClient _plutusApiClient;
 
         public List<History> FilteredList { get; set; }
-        private int _currentPage;
+        public int CurrentPage { get; set; }
+        private int _pageCount;
+        private readonly int _perPage = 12;
+        public Filters HistoryFilters { get; set; }
 
         public HistoryPage(PlutusApiClient plutusApi)
         {
             _plutusApiClient = plutusApi;
-            _currentPage = 0;
+            CurrentPage = 1;
+            HistoryFilters = new Filters
+            {
+                Used = false
+            };
             InitializeComponent();
             dataPicker.SelectedItem = "All";
             FilteredList = null;
@@ -40,6 +47,9 @@ namespace Plutus.Xamarin
 
         private async void LoadDetailsAsync(int index)
         {
+            _pageCount = await _plutusApiClient.GetPageCount(index, _perPage);
+            _pageCount++;
+            PagingMenu.IsVisible = (_pageCount > 1) ? true : false;
             data.Children.Clear();
             data.RowDefinitions.Clear();
             _ = scroll.ScrollToAsync(data, ScrollToPosition.Start, false);
@@ -47,7 +57,7 @@ namespace Plutus.Xamarin
             var list = new List<History>();
             if (FilteredList == null)
             {
-                list = await _plutusApiClient.GetHistoryAsync(index);
+                list = await _plutusApiClient.GetHistoryAsync(index, CurrentPage, _perPage);
             }
             else
             {
@@ -72,6 +82,21 @@ namespace Plutus.Xamarin
                 data.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1) });
                 data.Children.Add(new BoxView() { BackgroundColor = Color.FromHex("8D8B86") }, 0, i);
             }
+            currPageLabel.Text = CurrentPage.ToString();
+            pageCountLabel.Text = _pageCount.ToString();
+        }
+
+        private void NextPage_Clicked(object sender, EventArgs e)
+        {
+            if (CurrentPage == _pageCount) return;
+            CurrentPage++;
+            LoadDetailsAsync(dataPicker.SelectedIndex);
+        }
+        private void PrevPage_Clicked(object sender, EventArgs e)
+        {
+            if (CurrentPage == 1) return;
+            CurrentPage--;
+            LoadDetailsAsync(dataPicker.SelectedIndex);
         }
 
         private Label PaymentLabel(string info, int index)
@@ -113,7 +138,7 @@ namespace Plutus.Xamarin
         }
         private void EditButton_Clicked(object sender, EventArgs e)
         {
-            var page = new EditHistoryPage(_plutusApiClient, dataPicker.SelectedIndex);
+            var page = new EditHistoryPage(_plutusApiClient, dataPicker.SelectedIndex, CurrentPage, HistoryFilters, this);
             NavigationPage.SetHasNavigationBar(page, false);
             Navigation.PushAsync(page);
 
