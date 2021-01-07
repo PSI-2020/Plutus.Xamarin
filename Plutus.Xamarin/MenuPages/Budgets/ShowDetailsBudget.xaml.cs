@@ -21,8 +21,6 @@ namespace Plutus.Xamarin
         {
             budgetData.Children.Clear();
 
-            // var budget = await _plutusApiClient.GetBudgetAsync(_index);
-            // budgetName.Text = budget.ToUpper();
             var list = await _plutusApiClient.GetBudgetStatsAsync(_index);
             if (list != null)
             { 

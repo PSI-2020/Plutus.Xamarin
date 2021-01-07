@@ -5,6 +5,24 @@
               BackgroundColor = "#DCD5C9">
     <ContentPage.Content>
         <Grid>
+            
+
+
+            <StackLayout Padding="0,60,0,0" BackgroundColor="#DCD5C9">
+                <Label 
+                   Text="INSIGHTS" FontSize="48"
+                   TextColor="#726B60"
+                   FontAttributes="Bold"
+                   FontFamily="LilitaOne"
+                   HorizontalOptions="CenterAndExpand" />
+                
+                <Frame HasShadow="False" BackgroundColor="#CD5C9" Margin="20,3,20,10" BorderColor="Transparent" >
+                    <ScrollView>
+                        <StackLayout x:Name="statisticsStack">
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
+            </StackLayout>
             <Button Margin="0,0,0,0"
                     WidthRequest="60"
                     HeightRequest="60"
@@ -28,34 +46,6 @@
                     FontSize="30"
                     Text="✕" 
                     Clicked="ExitButton_Clicked" />
-
-
-            <StackLayout Margin="0,60,0,0" BackgroundColor="#DCD5C9">
-                <Label 
-                   Text="INSIGHTS" FontSize="48"
-                   TextColor="#726B60"
-                   FontAttributes="Bold"
-                   FontFamily="LilitaOne"
-                   HorizontalOptions="CenterAndExpand" />
-                <!--       
-            <Picker TextColor="White"
-                FontSize="15"
-                FontFamily="LilitaOne"
-                FontAttributes="Bold"
-                BackgroundColor="#A8A399" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="120" HorizontalOptions="Center">
-                <Picker.Items>
-                            <x:String>September 2020</x:String>
-                            <x:String>October 2020</x:String>
-                            <x:String>November 2020</x:String>
-                            <x:String>December 2020</x:String></Picker.Items> </Picker>
-                  -->
-                <Frame HasShadow="False" BackgroundColor="#CD5C9" Margin="20,3,20,10" BorderColor="Transparent" >
-                    <ScrollView>
-                        <StackLayout x:Name="statisticsStack">
-                        </StackLayout>
-                    </ScrollView>
-                </Frame>
-            </StackLayout>
         </Grid>
 
     </ContentPage.Content>

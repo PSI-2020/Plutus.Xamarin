@@ -4,7 +4,7 @@
              BackgroundColor = "#DCD5C9">
     <ContentPage.Content>
         <Grid>
-         <Button Margin="0,0,0,0"
+            <Button Margin="0,0,0,0"
                  Padding="0"
                     WidthRequest="40"
                     HeightRequest="50"
@@ -18,19 +18,6 @@
                     Text="&lt;" 
                     Clicked="ExitButton_Clicked" />
 
-          <!-- <Frame Margin="70,10,70,560" BackgroundColor="#726B60" HasShadow="False" BorderColor="#8D8B86" CornerRadius="20" Padding="0">
-               <Frame Margin="5,5,5,5" BackgroundColor="#A8A399" HasShadow="False"  CornerRadius="15" Padding="0">
-              <Label x:Name="budgetName"
-                Padding="0,5,0,0"
-                FontSize="16"
-                TextTransform="Uppercase"
-                TextColor="#504E4A"
-                FontAttributes="Bold"
-                FontFamily="LilitaOne"
-                HorizontalOptions="Center"
-                HorizontalTextAlignment="Center"/>
-              </Frame>
-              </Frame>-->
             <Frame BackgroundColor="Transparent" Padding="1" HasShadow="False" Margin = "20,70,20,20"  CornerRadius="0">
             <StackLayout Spacing="0">
             <Grid ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86"  ColumnDefinitions="*,*,*,*" RowDefinitions="30">
