@@ -41,18 +41,16 @@ namespace Plutus.Xamarin
 
         private async void Back_ClickedAsync(object sender, EventArgs e)
         {
-            _ = await SaveCartAsync();
             await Application.Current.MainPage.Navigation.PopAsync();
         }
         private async void DeleteCart_ClickedAsync(object sender, EventArgs e)
         {
-            var info = _cartService.DeleteCurrent();
-            await _plutusApiClient.DeleteCartAsync(info);
+            var id = _cartService.DeleteCurrent();
+            await _plutusApiClient.DeleteCartAsync(id);
             await Application.Current.MainPage.Navigation.PopAsync();
         }
         private async void ChargeCart_ClickedAsync(object sender, EventArgs e)
         {
-            _ = await SaveCartAsync();
             await _plutusApiClient.PostCartChargeAsync(_cartService.ChargeCart());
             await DisplayAlert("Success!", "Cart charged succesfully", "OK");
         }
@@ -74,13 +72,7 @@ namespace Plutus.Xamarin
             NavigationPage.SetHasNavigationBar(page, false);
             Navigation.PushAsync(page);
         }
-        private async Task<int> SaveCartAsync()
-        {
-            var cartInfo = _cartService.SaveCart();
-            if (cartInfo.Item2 == null) return 1;
-            await _plutusApiClient.PostCartAsync(cartInfo.Item1, cartInfo.Item2, cartInfo.Item3);
-            return 0;
-        }
+
         private void LoadExpenses()
         {
             cartExpenses.Children.Clear();
@@ -95,11 +87,12 @@ namespace Plutus.Xamarin
                     var deleteButton = new DelCEBut(i);
                     var editButton = new EditCEBut(i);
                     var stateSlider = new StateCESwitch(i, expense.State);
-                    deleteButton.Clicked += (s, e) =>
+                    deleteButton.Clicked += async (s, e) =>
                     {
                         var but = (DelCEBut)s;
                         var elemIndex = but.elemIndex;
-                        _cartService.RemoveExpenseCurrentAt(elemIndex);
+                        var id = _cartService.RemoveExpenseCurrentAt(elemIndex);
+                        await _plutusApiClient.DeleteCartExpenseAsync(_cartService.GiveCurrentId(), id);
                         LoadExpenses();
                     };
                     editButton.Clicked += (s, e) =>
@@ -110,11 +103,12 @@ namespace Plutus.Xamarin
                         NavigationPage.SetHasNavigationBar(page, false);
                         Navigation.PushAsync(page);
                     };
-                    stateSlider.Toggled += (s, e) =>
+                    stateSlider.Toggled += async (s, e) =>
                     {
                         var but = (StateCESwitch)s;
                         var elemIndex = but.elemIndex;
-                        _cartService.ChangeState(elemIndex);
+                        var exp = _cartService.ChangeState(elemIndex);
+                        await _plutusApiClient.PostEditCartExpenseAsync(_cartService.GiveCurrentId(), exp);
                     };
 
                     var delete = GetStack(i);

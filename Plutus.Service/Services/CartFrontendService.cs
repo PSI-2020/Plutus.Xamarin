@@ -20,19 +20,35 @@ namespace Plutus
             Loaded = false;
         }
 
-        public void NewCart() => _currentCart = new Cart();
-        public void AddExpenseToCart(string name, double amount, string category)
+        public void NewCart()
+        {
+            _currentCart = new Cart();
+            _currentCart.CartId = -1;
+        }
+        public CartExpense AddExpenseToCart(string name, double amount, string category)
         {
             var expense = new CartExpense(name, amount, category, true);
+            expense.ExpenseId = 0;
             _currentCart.AddExpense(expense);
+            return expense;
         }
-        public void EditExpense(int index, string name, double amount, string category) => _currentCart.EditExpense(index, name, amount, category);
+        public CartExpense EditExpense(int index, string name, double amount, string category) 
+        {
+            _currentCart.EditExpense(index, name, amount, category);
+            return _currentCart.GiveExpense(index);
+        }
 
         public int GiveCurrentCartElemCount() => _currentCart.GiveElementC();
 
         public CartExpense GiveCurrentElemAt(int i) => _currentCart.GiveExpense(i);
 
-        public void RemoveExpenseCurrentAt(int i) => _currentCart.RemoveExpense(i);
+        public int RemoveExpenseCurrentAt(int i)
+        {
+            var ide = _currentCart.GiveExpense(i);
+            _currentCart.RemoveExpense(i);
+            return ide.ExpenseId;
+        }
+        public int GiveCurrentId() => _currentCart.CartId;
 
         public void SetCurrentName(string name) => _currentCart.ChangeName(name);
         public (int, string, List<CartExpense>) AddCurrentCart()
@@ -60,29 +76,34 @@ namespace Plutus
 
         public int DeleteCurrent()
         {
-            var index = _carts.IndexOf(_currentCart);
+            var id = _currentCart.CartId;
             _carts.Remove(_currentCart);
             _currentCart = null;
-            return index;
+            return id;
         }
-        public void ChangeState(int i) => _currentCart.ChangeState(i);
-        public int ChargeCart() => _carts.IndexOf(_currentCart);
+        public CartExpense ChangeState(int i)
+        {
+            _currentCart.ChangeState(i);
+            return _currentCart.GiveExpense(i);
+        }
+        public int ChargeCart() => _currentCart.CartId;
         public (int, string, List<CartExpense>) SaveCart()
         {
             if (_currentCart == null) return (-1, null, null);
-            var index = _carts.IndexOf(_currentCart);
+            var id = _currentCart.CartId;
             var name = _currentCart.GiveName();
             var cartexpenses = new List<CartExpense>();
             for (var i = 0; i < _currentCart.GiveElementC(); i++)
             {
                 cartexpenses.Add(_currentCart.GiveExpense(i));
             }
-            return (index, name, cartexpenses);
+            return (id, name, cartexpenses);
         }
 
-        public void LoadCart(string name, List<CartExpense> expenses)
+        public void LoadCart(string name, int id, List<CartExpense> expenses)
         {
             var cart = new Cart(name);
+            cart.CartId = id;
             for (var i = 0; i < expenses.Count; i++)
             {
                 cart.AddExpense(expenses[i]);
