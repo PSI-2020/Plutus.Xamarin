@@ -42,26 +42,23 @@ namespace Plutus
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
             await _httpClient.PostAsync(_path + "/api/Payment/" + type, httpContent);
         }
-        public async Task EditPaymentAsync(Payment payment, int index, DataType type)
+        public async Task EditPaymentAsync(Payment payment, int index)
         {
             var json = JsonConvert.SerializeObject(payment);
             var httpContent = new StringContent(json);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
-            await _httpClient.PutAsync(_path + "/api/Payment/" + type + "/" + index, httpContent);
+            await _httpClient.PutAsync(_path + "/api/Payment/" + index, httpContent);
         }
 
-        public async Task DeletePaymentAsync(Payment payment, DataType type)
+        public async Task DeletePaymentAsync(int id)
         {
-            var json = JsonConvert.SerializeObject(payment);
-            var httpContent = new StringContent(json);
-            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
-            await _httpClient.PutAsync(_path + "/api/Payment/" + type, httpContent);
+            await _httpClient.DeleteAsync(_path + "/api/Payment/" + id);
         }
 
-        public async Task<List<History>> GetHistoryAsync(int index, int page, int perPage, Filters filter)
+        public async Task<List<HistoryElement>> GetHistoryAsync(int index, int page, int perPage, Filters filter)
         {
             var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + page + "/" + perPage + "/" + filter.Used + "/" + filter.NameFiter + "/" + filter.NameFiterString + "/" + filter.ExpFlag + "/" + filter.IncFlag + "/" + filter.AmountFilter + "/" + filter.AmountFrom + "/" + filter.AmountTo + "/" + filter.DateFilter + "/" + filter.DateFrom + "/" + filter.DateTo);
-            var history = JsonConvert.DeserializeObject<List<History>>(response);
+            var history = JsonConvert.DeserializeObject<List<HistoryElement>>(response);
             return history;
         }
 

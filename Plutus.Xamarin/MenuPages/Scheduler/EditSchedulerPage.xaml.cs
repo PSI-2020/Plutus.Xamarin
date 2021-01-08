@@ -101,9 +101,7 @@ namespace Plutus.Xamarin
                 };
                 editButton.Clicked += (s, e) =>
                 {
-                   // var index = item.Id;
-
-                    var editScheduledPaymentPage = new EditScheduledPaymentPage(item,type,payments,_plutusApiClient);
+                    var editScheduledPaymentPage = new EditScheduledPaymentPage(item,type,_plutusApiClient);
                     NavigationPage.SetHasNavigationBar(editScheduledPaymentPage, false);
                     Navigation.PushAsync(editScheduledPaymentPage);
                 };

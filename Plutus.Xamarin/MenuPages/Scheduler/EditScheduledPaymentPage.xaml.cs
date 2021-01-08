@@ -7,15 +7,12 @@ namespace Plutus.Xamarin
     public partial class EditScheduledPaymentPage : ContentPage
     {
         private readonly PlutusApiClient _plutusApiClient;
-        private readonly int _index;
         private readonly ScheduledPayment _payment;
         private readonly string _type;
-        private readonly List<ScheduledPayment> _list;
-        public EditScheduledPaymentPage(ScheduledPayment payment, string type, List<ScheduledPayment> list, PlutusApiClient plutusApi)
+        public EditScheduledPaymentPage(ScheduledPayment payment, string type, PlutusApiClient plutusApi)
         {
             _payment = payment;
             _type = type;
-            _list = list;
             _plutusApiClient = plutusApi;
             InitializeComponent();
             LoadContent();
@@ -61,11 +58,10 @@ namespace Plutus.Xamarin
         }
         private async void ChangeButton_Clicked(object sender, EventArgs e)
         {
-            var verificationService = new VerificationService(); //pakeisti
+            var verificationService = new VerificationService();
             var error = verificationService.VerifyData(name: newPaymentName.Text, amount: newPaymentAmount.Text);
             if (error == "")
             {
-                var list = await _plutusApiClient.GetAllScheduledPaymentsAsync(_type);
                 await _plutusApiClient.ChangeScheduledPaymentAsync(new ScheduledPayment(newPaymentDay.Date, newPaymentName.Text, double.Parse(newPaymentAmount.Text),
                 newPaymentCategory.SelectedItem.ToString(), newPaymentFrequency.SelectedItem.ToString(), _payment.Active), _payment.Id, _type);
                 this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);

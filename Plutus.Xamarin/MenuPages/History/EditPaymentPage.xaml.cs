@@ -10,7 +10,6 @@ namespace Plutus.Xamarin
         private readonly PlutusApiClient _plutusApiClient;
         private readonly Payment _payment;
         private readonly DataType _type;
-        private readonly List<Payment> _list;
         public EditPaymentPage(Payment payment,DataType type, PlutusApiClient plutusApi)
         {
             _payment = payment;
@@ -62,8 +61,6 @@ namespace Plutus.Xamarin
             var error = verificationService.VerifyData(name: newPaymentName.Text, amount: newPaymentAmount.Text);
             if (error == "")
             {
-                var list = await _plutusApiClient.GetPaymentsAsync(_type.ToString());
-
                 var newPayment = new Payment
                 {
                     Date = DateTime.UtcNow.ConvertToInt(),
@@ -71,7 +68,7 @@ namespace Plutus.Xamarin
                     Amount = double.Parse(newPaymentAmount.Text),
                     Category = newPaymentCategory.SelectedItem.ToString()
                 };
-                await _plutusApiClient.EditPaymentAsync(newPayment, list.IndexOf(_payment), _type);
+                await _plutusApiClient.EditPaymentAsync(newPayment, _payment.PaymentID);
                 this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
                 await Application.Current.MainPage.Navigation.PopAsync();
             }
@@ -83,7 +80,7 @@ namespace Plutus.Xamarin
         }
         private async void DeleteButton_Clicked(object sender, EventArgs e)
         {
-            await _plutusApiClient.DeletePaymentAsync(_payment,_type);
+            await _plutusApiClient.DeletePaymentAsync(_payment.PaymentID);
             this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
             await Application.Current.MainPage.Navigation.PopAsync();
 

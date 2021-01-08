@@ -14,7 +14,7 @@ namespace Plutus.Xamarin
     {
         private readonly PlutusApiClient _plutusApiClient;
 
-        public List<History> FilteredList { get; set; }
+        public List<HistoryElement> FilteredList { get; set; }
         public int CurrentPage { get; set; }
         private int _pageCount;
         private readonly int _perPage = 12;
@@ -64,7 +64,7 @@ namespace Plutus.Xamarin
             data.RowDefinitions.Clear();
             _ = scroll.ScrollToAsync(data, ScrollToPosition.Start, false);
 
-            var list = new List<History>();
+            var list = new List<HistoryElement>();
             if (FilteredList == null)
             {
                 list = await _plutusApiClient.GetHistoryAsync(index, CurrentPage, _perPage, HistoryFilters);
@@ -85,7 +85,7 @@ namespace Plutus.Xamarin
                     data.Children.Add(PaymentLabel(payment.Amount.ToString("C2"), i), 2, i);
                     data.Children.Add(PaymentLabel(payment.Category, i), 3, i);
                     data.Children.Add(PaymentLabel(payment.Type, i), 4, i);
-
+                    
                     i++;
                 }
 

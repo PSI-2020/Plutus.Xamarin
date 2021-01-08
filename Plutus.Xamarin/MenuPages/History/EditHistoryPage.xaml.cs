@@ -15,7 +15,7 @@ namespace Plutus.Xamarin
     {
         private readonly PlutusApiClient _plutusApiClient;
         private readonly int _previousPageIndex;
-        public List<History> FilteredList { get; set; }
+        public List<HistoryElement> FilteredList { get; set; }
         public int CurrentPage { get; set; }
         private int _pageCount;
         private readonly int _perPage = 12;
@@ -67,6 +67,7 @@ namespace Plutus.Xamarin
                 {
                     var currentPayment = new Payment
                     {
+                        PaymentID = payment.PaymentID,
                         Date = payment.Date.ConvertToInt(),
                         Name = payment.Name,
                         Amount = payment.Amount,
@@ -98,7 +99,7 @@ namespace Plutus.Xamarin
                     deleteButton.Clicked += async (s, e) =>
                     {
                        
-                        await _plutusApiClient.DeletePaymentAsync(currentPayment,currentType);
+                        await _plutusApiClient.DeletePaymentAsync(currentPayment.PaymentID);
                         LoadDetailsAsync(index);
 
                     };
