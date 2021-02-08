@@ -6,18 +6,7 @@
     <ContentPage.Content>
 
         <Grid>
-            <Button Text="back"
-                    HeightRequest="45"
-                    HorizontalOptions="End"
-                    WidthRequest="59"
-                    FontSize="13"
-                    FontFamily="LilitaOne"
-                    VerticalOptions="Start"
-                    Margin="20,15"
-                    BackgroundColor="#DCD5C9"
-                    BorderColor="#C7C1B5"
-                    TextColor="#726B60"
-                    Clicked="ExitButton_Clicked"/>
+            
 
             <StackLayout Padding="0,50,0,0">
                 <Frame HasShadow="False" Padding="10" BackgroundColor="#DCD5C9" Margin="30,0,30,150">
@@ -122,6 +111,18 @@
                     </ScrollView>
                 </Frame>
             </StackLayout>
+            <Button Text="back"
+                    HeightRequest="45"
+                    HorizontalOptions="End"
+                    WidthRequest="59"
+                    FontSize="13"
+                    FontFamily="LilitaOne"
+                    VerticalOptions="Start"
+                    Margin="20,15"
+                    BackgroundColor="#DCD5C9"
+                    BorderColor="#C7C1B5"
+                    TextColor="#726B60"
+                    Clicked="ExitButton_Clicked"/>
             <Button Margin="50,40" WidthRequest="300" HeightRequest="60" VerticalOptions="End"
                 HorizontalOptions="Center" BackgroundColor="#726B60" CornerRadius="15" 
                 TextColor="White" FontSize="25" FontFamily="LilitaOne" FontAttributes="Bold" Text="ADD"

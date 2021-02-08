@@ -31,22 +31,20 @@ namespace Plutus.Xamarin
         public async void CreateCartButtonsAsync()
         {
             var list = await _plutusApiClient.GetCartNamesAsync();
-            var i = 0;
             _cartService.CleanseCarts();
             if (!_cartService.Loaded)
             {
-                foreach (var name in list)
+                foreach (var cart in list)
                 {
-                    var listelem = await _plutusApiClient.GetCartExpensesAsync(i);
-                    i++;
-                    _cartService.LoadCart(name, listelem);
+                    var listelem = await _plutusApiClient.GetCartExpensesAsync(cart.CartId);
+                    _cartService.LoadCart(cart.Name, cart.CartId, listelem);
                 }
                 _cartService.Loaded = true;
             }
 
             cartsStack.Children.Clear();
 
-            for (i = 0; i < _cartService.GiveCartCount(); i++)
+            for (var i = 0; i < _cartService.GiveCartCount(); i++)
             {
                 var item = _cartService.GiveCartNameAt(i);
                 var button = new CartButton(item, i);

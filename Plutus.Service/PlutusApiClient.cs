@@ -42,27 +42,31 @@ namespace Plutus
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
             await _httpClient.PostAsync(_path + "/api/Payment/" + type, httpContent);
         }
-        public async Task EditPaymentAsync(Payment payment, int index, DataType type)
+        public async Task EditPaymentAsync(Payment payment, int index)
         {
             var json = JsonConvert.SerializeObject(payment);
             var httpContent = new StringContent(json);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
-            await _httpClient.PutAsync(_path + "/api/Payment/" + type + "/" + index, httpContent);
+            await _httpClient.PutAsync(_path + "/api/Payment/" + index, httpContent);
         }
 
-        public async Task DeletePaymentAsync(Payment payment, DataType type)
+        public async Task DeletePaymentAsync(int id)
         {
-            var json = JsonConvert.SerializeObject(payment);
-            var httpContent = new StringContent(json);
-            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
-            await _httpClient.PutAsync(_path + "/api/Payment/" + type, httpContent);
+            await _httpClient.DeleteAsync(_path + "/api/Payment/" + id);
         }
 
-        public async Task<List<History>> GetHistoryAsync(int index)
+        public async Task<List<HistoryElement>> GetHistoryAsync(int index, int page, int perPage, Filters filter)
         {
-            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index);
-            var history = JsonConvert.DeserializeObject<List<History>>(response);
+            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + page + "/" + perPage + "/" + filter.Used + "/" + filter.NameFiter + "/" + filter.NameFiterString + "/" + filter.ExpFlag + "/" + filter.IncFlag + "/" + filter.AmountFilter + "/" + filter.AmountFrom + "/" + filter.AmountTo + "/" + filter.DateFilter + "/" + filter.DateFrom + "/" + filter.DateTo);
+            var history = JsonConvert.DeserializeObject<List<HistoryElement>>(response);
             return history;
+        }
+
+        public async Task<int> GetPageCount(int index, int perPage, Filters filter)
+        {
+            var response = await _httpClient.GetStringAsync(_path + "/api/History/" + index + "/" + perPage + "/" + filter.Used + "/" + filter.NameFiter + "/" + filter.NameFiterString + "/" + filter.ExpFlag + "/" + filter.IncFlag + "/" + filter.AmountFilter + "/" + filter.AmountFrom + "/" + filter.AmountTo + "/" + filter.DateFilter + "/" + filter.DateFrom + "/" + filter.DateTo);
+            var pageCount = JsonConvert.DeserializeObject<int>(response);
+            return pageCount;
         }
 
         public async Task<List<Payment>> GetPaymentsAsync(string type)
@@ -194,30 +198,49 @@ namespace Plutus
             var scheduledPayments = JsonConvert.DeserializeObject<List<ScheduledPayment>>(response);
             return scheduledPayments;
         }
-        public async Task DeleteCartAsync(int index) => await _httpClient.DeleteAsync(_path + "/api/Carts/" + index);
+        public async Task DeleteCartAsync(int id) => await _httpClient.DeleteAsync(_path + "/api/Carts/" + id);
+        public async Task DeleteCartExpenseAsync(int id, int eId) => await _httpClient.DeleteAsync(_path + "/api/Carts/" + id + "/" + eId);
         public async Task PostCartChargeAsync(int index) => await _httpClient.PostAsync(_path + "/api/Carts/Charge/" + index, null);
-        public async Task PostCartAsync(int index, string name, List<CartExpense> cart)
+        public async Task PostRenameCartAsync(int id, string name)
         {
-            var json = JsonConvert.SerializeObject(cart);
+            var json = JsonConvert.SerializeObject("Empty");
             var httpContent = new StringContent(json);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
-            var resp = await _httpClient.PostAsync(_path + "/api/Carts/" + index + "/" + name, httpContent);
-            var e = 1;
+            var resp = await _httpClient.PostAsync(_path + "/api/Carts/" + id + "/" + name, httpContent);
         }
-
+        public async Task PostNewCartAsync(string name)
+        {
+            var json = JsonConvert.SerializeObject("empty body");
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            var resp = await _httpClient.PostAsync(_path + "/api/Carts/" + name, httpContent);
+        }
+        public async Task PostNewCartExpenseAsync(int id, CartExpense expense)
+        {
+            var json = JsonConvert.SerializeObject(expense);
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            var resp = await _httpClient.PostAsync(_path + "/api/Carts/" + id + "/add", httpContent);
+        }
+        public async Task PostEditCartExpenseAsync(int id, CartExpense expense)
+        {
+            var json = JsonConvert.SerializeObject(expense);
+            var httpContent = new StringContent(json);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
+            var resp = await _httpClient.PostAsync(_path + "/api/Carts/" + id + "/edit", httpContent);
+        }
         public async Task PostChargeShoppingAsync(List<ShoppingExpense> bag)
         {
             var json = JsonConvert.SerializeObject(bag);
             var httpContent = new StringContent(json);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/Json");
             var resp = await _httpClient.PostAsync(_path + "/api/Shopping", httpContent);
-            var ee = 1;
         }
 
-        public async Task<List<string>> GetCartNamesAsync()
+        public async Task<List<CartInfo>> GetCartNamesAsync()
         {
             var response = await _httpClient.GetStringAsync(_path + "/api/Carts/");
-            var cartNames = JsonConvert.DeserializeObject<List<string>>(response);
+            var cartNames = JsonConvert.DeserializeObject<List<CartInfo>>(response);
             return cartNames;
         }
         public async Task<List<CartExpense>> GetCartExpensesAsync(int index)

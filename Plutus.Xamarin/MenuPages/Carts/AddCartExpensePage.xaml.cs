@@ -42,7 +42,8 @@ namespace Plutus.Xamarin
             var error = verificationService.VerifyData(name: expenseName.Text, amount: expenseAmount.Text);
             if (error == "")
             {
-                _cartService.AddExpenseToCart(expenseName.Text, double.Parse(expenseAmount.Text), expenseCategory.SelectedItem.ToString());
+                var exp = _cartService.AddExpenseToCart(expenseName.Text, double.Parse(expenseAmount.Text), expenseCategory.SelectedItem.ToString());
+                await _plutusApiClient.PostNewCartExpenseAsync(_cartService.GiveCurrentId(), exp);
                 await Application.Current.MainPage.Navigation.PopAsync();
             }
             else

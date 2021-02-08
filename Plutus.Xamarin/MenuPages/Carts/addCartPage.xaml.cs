@@ -25,7 +25,7 @@ namespace Plutus.Xamarin
             {
                 _cartService.SetCurrentName(newCartName.Text);
                 var cartinfo = _cartService.AddCurrentCart();
-                await _plutusApiClient.PostCartAsync(cartinfo.Item1, cartinfo.Item2, cartinfo.Item3);
+                await _plutusApiClient.PostNewCartAsync(newCartName.Text);
                 await DisplayAlert("Success!", "Cart added succesfully", "OK");
                 await Application.Current.MainPage.Navigation.PopAsync();
             }

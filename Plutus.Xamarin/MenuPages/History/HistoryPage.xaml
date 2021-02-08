@@ -46,28 +46,33 @@
             <Button Grid.Row="0" Grid.Column="0" VerticalOptions="Fill" Clicked="EditButton_Clicked" Padding="0" BackgroundColor="Transparent" TextColor="#928B80" FontAttributes="Bold" FontSize="10" Text="edit" TextTransform="Lowercase" HorizontalOptions="Start" />
             <Button Grid.Row="0" Grid.Column="1" VerticalOptions="Fill" Clicked="FilterButton_Clicked" Padding="0" BackgroundColor="Transparent" Text="filter"   TextColor="#928B80" FontSize="10" TextTransform="Lowercase" HorizontalOptions="End"/>
             </Grid>
-            
-            <Frame BackgroundColor="Transparent" Padding="1" HasShadow="False" CornerRadius="0" HeightRequest="1500">
-            <StackLayout Spacing="0">
-            <Grid ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86" ColumnDefinitions="*,*,*,*,45" RowDefinitions="30" >
-          
-             <Label Grid.Row="0" Grid.Column="0" Text="Date" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
-             <Label Grid.Row="0" Grid.Column="1" Text="Name" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
-             <Label Grid.Row="0" Grid.Column="2" Text="Amount" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
-             <Label Grid.Row="0" Grid.Column="3" Text="Category" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
-             <Label Grid.Row="0" Grid.Column="4" Text="Type" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
-            </Grid>
-            <ScrollView x:Name="scroll">
-              <Grid x:Name="data" RowSpacing="0" ColumnSpacing="2" BackgroundColor="#8D8B86" ColumnDefinitions="*,*,*,*,45"/>
-                
-            </ScrollView>
-          
-            </StackLayout>
-                </Frame>
-                </StackLayout>
-           
 
+                <Frame BackgroundColor="Transparent" Padding="1" HasShadow="False" CornerRadius="0" HeightRequest="1500">
+                    <StackLayout Spacing="0">
+                        <Grid ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86" ColumnDefinitions="*,*,*,*,45" RowDefinitions="30" >
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Date" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Name" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Amount" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="Category" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                            <Label Grid.Row="0" Grid.Column="4" Text="Type" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                        </Grid>
+                        <ScrollView x:Name="scroll">
+                            <Grid x:Name="data" RowSpacing="0" ColumnSpacing="2" BackgroundColor="#8D8B86" ColumnDefinitions="*,*,*,*,45"/>
+                        </ScrollView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <Grid VerticalOptions="End" Margin="0,0,0,10" x:Name="PagingMenu" ColumnSpacing="2" RowSpacing="0" BackgroundColor="#8D8B86" ColumnDefinitions="50,50,*,20, *,50" RowDefinitions="40" >
+                <Button Grid.Row="0" Grid.Column="0" Text="&lt;" TextColor="White" FontFamily="LilitaOne" FontAttributes="Bold" BackgroundColor="#726B60" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="PrevPage_Clicked"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Page " TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                <Label x:Name="currPageLabel"  Grid.Row="0" Grid.Column="2" Text="" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                <Label Grid.Row="0" Grid.Column="3" Text="/" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                <Label x:Name="pageCountLabel" Grid.Row="0" Grid.Column="4" Text="" TextColor="White" FontSize="15" FontFamily="LilitaOne" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#726B60"/>
+                <Button Grid.Row="0" Grid.Column="5" Text="&gt;" TextColor="White" FontFamily="LilitaOne" FontAttributes="Bold" BackgroundColor="#726B60" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="NextPage_Clicked"/>
             </Grid>
+
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>
